@@ -39,12 +39,12 @@ const DefaultHeader = () => {
                 <div className="d-flex align-items-center justify-content-between">
                   <div className="logos mr40">
                     <Link className="header-logo logo1" href="/">
-                      <Image
+                      {/* <Image
                         width={138}
                         height={44}
                         src="/images/header-logo2.svg"
                         alt="Header Logo"
-                      />
+                      /> */}
                     </Link>
                     <Link className="header-logo logo2" href="/">
                       <Image
