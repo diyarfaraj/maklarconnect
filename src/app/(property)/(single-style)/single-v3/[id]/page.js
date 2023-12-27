@@ -26,10 +26,10 @@ import MortgageCalculator from "@/components/property/property-single-style/comm
 import WalkScore from "@/components/property/property-single-style/common/WalkScore";
 
 export const metadata = {
-  title: "Property Single V3 || Homez - Real Estate NextJS Template",
+  title: "Property Single V3 || MäklarConnect - Real Estate NextJS Template",
 };
 
-const SingleV3 = ({params}) => {
+const SingleV3 = ({ params }) => {
   return (
     <>
       {/* Main Header Nav */}
@@ -58,7 +58,7 @@ const SingleV3 = ({params}) => {
               <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
                 <h4 className="title fz17 mb30">Overview</h4>
                 <div className="row">
-                  <OverView id={params.id}  />
+                  <OverView id={params.id} />
                 </div>
               </div>
               {/* End .ps-widget */}

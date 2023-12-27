@@ -17,7 +17,7 @@ import Link from "next/link";
 import PopulerProperty from "@/components/home/home-v1/PopulerProperty";
 
 export const metadata = {
-  title: "Home v1 || Homez - Real Estate NextJS Template",
+  title: "Home v1 || MäklarConnect - Real Estate NextJS Template",
 };
 
 const Home_V1 = () => {
@@ -67,9 +67,9 @@ const Home_V1 = () => {
                 data-aos="fade-up"
                 data-aos-delay="300"
               >
-                <h2 className="title">Explore Apartment Types</h2>
+                <h2 className="title">Utforska typer av bostäder</h2>
                 <p className="paragraph">
-                  Get some Inspirations from 1800+ skills
+                  Vi har ett stort utbud av bostäder i olika prisklasser
                 </p>
               </div>
             </div>
@@ -126,7 +126,7 @@ const Home_V1 = () => {
               data-aos-delay="300"
             >
               <div className="main-title text-center">
-                <h2 className="title">See How Realton Can Help</h2>
+                <h2 className="title">Hur MäklarConnect kan hjälpa er</h2>
                 <p className="paragraph">
                   Aliquam lacinia diam quis lacus euismod
                 </p>
@@ -148,16 +148,16 @@ const Home_V1 = () => {
           <div className="row align-items-center" data-aos="fade-up">
             <div className="col-lg-9">
               <div className="main-title2">
-                <h2 className="title">Discover Our Featured Listings</h2>
+                <h2 className="title">Upptäck våra utvalda annonser</h2>
                 <p className="paragraph">
-                  Aliquam lacinia diam quis lacus euismod
+                  Vi har ett stort utbud av bostäder i olika prisklasser
                 </p>
               </div>
             </div>
             <div className="col-lg-3">
               <div className="text-start text-lg-end mb-3">
                 <Link className="ud-btn2" href="/grid-full-3-col">
-                  See All Properties
+                  Se all annonser
                   <i className="fal fa-arrow-right-long" />
                 </Link>
               </div>
@@ -240,7 +240,7 @@ const Home_V1 = () => {
                 data-aos="fade-up"
                 data-aos-delay="300"
               >
-                <h2 className="title">People Love Living with Realton</h2>
+                <h2 className="title">Se vad andra tycker om MäklarConnect</h2>
                 <p className="paragraph">
                   Aliquam lacinia diam quis lacus euismod
                 </p>

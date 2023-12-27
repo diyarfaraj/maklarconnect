@@ -4,7 +4,7 @@ import Link from "next/link";
 import React from "react";
 
 export const metadata = {
-  title: "Login  || Homez - Real Estate NextJS Template",
+  title: "Login  || MäklarConnect - Real Estate NextJS Template",
 };
 
 const Login = () => {
@@ -31,7 +31,7 @@ const Login = () => {
                       width={138}
                       height={44}
                       className="mb25"
-                      src="/images/header-logo2.svg"
+                      src="/images/header-logo2.png"
                       alt="logo"
                     />
                   </Link>

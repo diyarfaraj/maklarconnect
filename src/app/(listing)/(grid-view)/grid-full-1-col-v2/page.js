@@ -5,12 +5,10 @@ import MobileMenu from "@/components/common/mobile-menu";
 
 import PropertyFilteringCol from "@/components/listing/grid-view/grid-full-1-col-v2/PropertyFilteringCol";
 
-
-
 import React from "react";
 
 export const metadata = {
-  title: "Gird Full 1 Column V2 || Homez - Real Estate NextJS Template",
+  title: "Gird Full 1 Column V2 || MäklarConnect - Real Estate NextJS Template",
 };
 
 const GridFull1ColV2 = () => {
@@ -25,11 +23,11 @@ const GridFull1ColV2 = () => {
       {/* End Mobile Nav  */}
 
       {/* Advance Search */}
-      
+
       {/* End Breadcumb Sections */}
 
       {/* Property Filtering */}
-      <PropertyFilteringCol/>
+      <PropertyFilteringCol />
       {/* Property Filtering */}
 
       {/* Start Our Footer */}

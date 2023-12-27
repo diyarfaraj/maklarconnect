@@ -41,8 +41,8 @@ const Header = () => {
                     <Link className="header-logo logo1" href="/">
                       <Image
                         width={138}
-                        height={44}
-                        src="/images/header-logo.svg"
+                        height={60}
+                        src="/images/header-logo.png"
                         alt="Header Logo"
                       />
                     </Link>
@@ -50,7 +50,7 @@ const Header = () => {
                       <Image
                         width={138}
                         height={44}
-                        src="/images/header-logo2.svg"
+                        src="/images/header-logo2.png"
                         alt="Header Logo"
                       />
                     </Link>
@@ -73,13 +73,15 @@ const Header = () => {
                     role="button"
                   >
                     <i className="far fa-user-circle fz16 me-2" />{" "}
-                    <span className="d-none d-xl-block">Login / Register</span>
+                    <span className="d-none d-xl-block">
+                      Logga in / Registrera
+                    </span>
                   </a>
                   <Link
                     className="ud-btn add-property menu-btn bdrs60 mx-2 mx-xl-4"
                     href="/dashboard-add-property"
                   >
-                    Add Property
+                    Skapa bevakning
                     <i className="fal fa-arrow-right-long" />
                   </Link>
                   <a

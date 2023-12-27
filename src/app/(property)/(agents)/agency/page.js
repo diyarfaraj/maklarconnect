@@ -6,7 +6,7 @@ import FilteringAgency from "@/components/property/FilteringAgency";
 import React from "react";
 
 export const metadata = {
-  title: "Agency || Homez - Real Estate NextJS Template",
+  title: "Agency || MäklarConnect - Real Estate NextJS Template",
 };
 
 const Agency = () => {
@@ -39,7 +39,7 @@ const Agency = () => {
       {/* End Breadcumb Sections */}
 
       {/* Agent Section Area */}
-      <FilteringAgency/>
+      <FilteringAgency />
 
       {/* End Agent Section Area */}
 

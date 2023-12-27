@@ -6,7 +6,7 @@ import Form from "@/components/pages/contact/Form";
 import Office from "@/components/pages/contact/Office";
 
 export const metadata = {
-  title: "Contact  || Homez - Real Estate NextJS Template",
+  title: "Contact  || MäklarConnect - Real Estate NextJS Template",
 };
 
 const Contact = () => {
@@ -53,8 +53,8 @@ const Contact = () => {
               </h2>
               <p className="text">
                 We are here to answer any question you may have. As a partner of
-                corporates, realton has more than 9,000 offices of all sizes and
-                all potential of session.
+                corporates, MäklarConnect has more than 9,000 offices of all
+                sizes and all potential of session.
               </p>
             </div>
             {/* End .col */}
@@ -75,7 +75,7 @@ const Contact = () => {
               <div className="main-title text-center">
                 <h2 className="title">Visit Our Office</h2>
                 <p className="paragraph">
-                  Realton has more than 9,000 offices of all sizes and all
+                  MäklarConnect has more than 9,000 offices of all sizes and all
                   potential of session.
                 </p>
               </div>

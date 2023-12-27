@@ -14,10 +14,10 @@ import Link from "next/link";
 import React from "react";
 
 export const metadata = {
-  title: "Agency Single || Homez - Real Estate NextJS Template",
+  title: "Agency Single || MäklarConnect - Real Estate NextJS Template",
 };
 
-const AgencySingle = ({params}) => {
+const AgencySingle = ({ params }) => {
   return (
     <>
       {/* Main Header Nav */}
@@ -39,7 +39,6 @@ const AgencySingle = ({params}) => {
                   <Image
                     width={120}
                     height={120}
-                    
                     className="img-1 spin-right"
                     src="/images/about/element-12.png"
                     alt="agents"
@@ -131,7 +130,7 @@ const AgencySingle = ({params}) => {
               </div>
               {/* End .row */}
 
-              <ListingItemsContainer/>
+              <ListingItemsContainer />
               {/* End .row */}
 
               <div className="row pt30 bdrb1">

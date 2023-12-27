@@ -14,10 +14,10 @@ import Image from "next/image";
 import React from "react";
 
 export const metadata = {
-  title: "Agent Single || Homez - Real Estate NextJS Template",
+  title: "Agent Single || MäklarConnect - Real Estate NextJS Template",
 };
 
-const AgentSingle = ({params}) => {
+const AgentSingle = ({ params }) => {
   return (
     <>
       {/* Main Header Nav */}
@@ -34,7 +34,7 @@ const AgentSingle = ({params}) => {
           <div className="container">
             <div className="row align-items-center">
               <div className="col-xl-7">
-                <SingleAgentCta id={params.id}/>
+                <SingleAgentCta id={params.id} />
                 <div className="img-box-11 position-relative d-none d-xl-block">
                   <Image
                     width={120}
@@ -130,7 +130,7 @@ const AgentSingle = ({params}) => {
               </div>
               {/* End .row */}
 
-              <ListingItemsContainer/>
+              <ListingItemsContainer />
               <div className="row">
                 <div className="col-lg-12">
                   <AllReviews />

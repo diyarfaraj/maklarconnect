@@ -6,7 +6,7 @@ import React from "react";
 import PropertyFiltering from "@/components/listing/grid-view/grid-default/PropertyFiltering";
 
 export const metadata = {
-  title: "Gird Default || Homez - Real Estate NextJS Template",
+  title: "Gird Default || MäklarConnect - Real Estate NextJS Template",
 };
 
 const GridDefault = () => {
@@ -48,7 +48,7 @@ const GridDefault = () => {
       {/* End Breadcumb Sections */}
 
       {/* Property Filtering */}
-      <PropertyFiltering/>
+      <PropertyFiltering />
       {/* Property Filtering */}
 
       {/* Start Our Footer */}

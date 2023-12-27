@@ -8,7 +8,7 @@ import ProperteyFiltering from "@/components/listing/grid-view/grid-full-3-col/P
 import React from "react";
 
 export const metadata = {
-  title: "Gird Full 3 Column || Homez - Real Estate NextJS Template",
+  title: "Gird Full 3 Column || MäklarConnect - Real Estate NextJS Template",
 };
 
 const GridFull3Col = () => {
@@ -50,7 +50,7 @@ const GridFull3Col = () => {
       {/* End Breadcumb Sections */}
 
       {/* Property Filtering */}
-      <ProperteyFiltering/>
+      <ProperteyFiltering />
       {/* Property Filtering */}
 
       {/* Start Our Footer */}

@@ -24,10 +24,10 @@ import MortgageCalculator from "@/components/property/property-single-style/comm
 import WalkScore from "@/components/property/property-single-style/common/WalkScore";
 
 export const metadata = {
-  title: "Property Single V5 || Homez - Real Estate NextJS Template",
+  title: "Property Single V5 || MäklarConnect - Real Estate NextJS Template",
 };
 
-const SingleV5 = ({params}) => {
+const SingleV5 = ({ params }) => {
   return (
     <>
       {/* Main Header Nav */}
@@ -48,7 +48,7 @@ const SingleV5 = ({params}) => {
       <section className="pt30 pb90 bgc-f7">
         <div className="container">
           <div className="row sp-v5-property-details">
-            <PropertyHeader id={params.id}  />
+            <PropertyHeader id={params.id} />
           </div>
           {/* End .row */}
 
@@ -57,7 +57,7 @@ const SingleV5 = ({params}) => {
               <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
                 <h4 className="title fz17 mb30">Overview</h4>
                 <div className="row">
-                  <OverView id={params.id}  />
+                  <OverView id={params.id} />
                 </div>
               </div>
               {/* End .ps-widget */}
@@ -69,7 +69,7 @@ const SingleV5 = ({params}) => {
 
                 <h4 className="title fz17 mb30 mt50">Property Details</h4>
                 <div className="row">
-                  <PropertyDetails id={params.id}  />
+                  <PropertyDetails id={params.id} />
                 </div>
               </div>
               {/* End .ps-widget */}

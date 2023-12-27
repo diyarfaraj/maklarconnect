@@ -7,7 +7,7 @@ import PropertyFilteringMapFive from "@/components/listing/map-style/map-v4/Prop
 import React from "react";
 
 export const metadata = {
-  title: "Map V4 || Homez - Real Estate NextJS Template",
+  title: "Map V4 || MäklarConnect - Real Estate NextJS Template",
 };
 
 const MapV4 = () => {
@@ -20,9 +20,8 @@ const MapV4 = () => {
       {/* Mobile Nav  */}
       <MobileMenu />
       {/* End Mobile Nav  */}
-      <PropertyFilteringMapFive/>
+      <PropertyFilteringMapFive />
 
-   
       {/* Property Filtering */}
     </>
   );

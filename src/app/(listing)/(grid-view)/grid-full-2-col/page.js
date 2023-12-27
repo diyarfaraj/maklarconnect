@@ -4,13 +4,10 @@ import Footer from "@/components/common/default-footer";
 import MobileMenu from "@/components/common/mobile-menu";
 import PropertyFiltering from "@/components/listing/grid-view/grid-full-2-col/PropertyFiltering";
 
-
-
-
 import React from "react";
 
 export const metadata = {
-  title: "Gird Full 2 Column || Homez - Real Estate NextJS Template",
+  title: "Gird Full 2 Column || MäklarConnect - Real Estate NextJS Template",
 };
 
 const GridFull2Col = () => {
@@ -52,8 +49,8 @@ const GridFull2Col = () => {
       {/* End Breadcumb Sections */}
 
       {/* Property Filtering */}
-      <PropertyFiltering/>
-      
+      <PropertyFiltering />
+
       {/* Property Filtering */}
 
       {/* Start Our Footer */}

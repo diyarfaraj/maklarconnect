@@ -7,7 +7,7 @@ import PropertyFilteringThree from "@/components/listing/map-style/map-v2/Proper
 import React from "react";
 
 export const metadata = {
-  title: "Map V2 || Homez - Real Estate NextJS Template",
+  title: "Map V2 || MäklarConnect - Real Estate NextJS Template",
 };
 
 const MapV2 = () => {
@@ -20,10 +20,9 @@ const MapV2 = () => {
       {/* Mobile Nav  */}
       <MobileMenu />
       {/* End Mobile Nav  */}
-            {/* Property Filtering */}
-      <PropertyFilteringThree/>
+      {/* Property Filtering */}
+      <PropertyFilteringThree />
 
-     
       {/* Property Filtering */}
     </>
   );

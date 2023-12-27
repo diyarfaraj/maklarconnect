@@ -30,7 +30,7 @@ const MobileMenu = () => {
                 <Image
                   width={138}
                   height={44}
-                  src="/images/header-logo2.svg"
+                  src="/images/header-logo2.png"
                   alt="logo"
                 />
               </Link>
@@ -59,7 +59,7 @@ const MobileMenu = () => {
             >
               <span className="far fa-times"></span>
             </div>
-            <h4 className="title">Welcome to Homez</h4>
+            <h4 className="title">Welcome to MäklarConnect</h4>
           </div>
           {/* End header */}
 

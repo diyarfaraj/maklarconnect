@@ -10,7 +10,7 @@ import TopFilterBar2 from "@/components/listing/map-style/header-map-style/TopFi
 import React from "react";
 
 export const metadata = {
-  title: "Header Map Style || Homez - Real Estate NextJS Template",
+  title: "Header Map Style || MäklarConnect - Real Estate NextJS Template",
 };
 
 const HeaderMapStyle = () => {
@@ -24,7 +24,7 @@ const HeaderMapStyle = () => {
       <MobileMenu />
       {/* End Mobile Nav  */}
 
-     <PropertyFilteringMap/>
+      <PropertyFilteringMap />
       {/* Property Filtering */}
 
       {/* Start Our Footer */}

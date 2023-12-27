@@ -7,7 +7,7 @@ import PropertyFilteringBanner from "@/components/listing/grid-view/banner-searc
 import React from "react";
 
 export const metadata = {
-  title: "Banner Search V1 || Homez - Real Estate NextJS Template",
+  title: "Banner Search V1 || MäklarConnect - Real Estate NextJS Template",
 };
 
 const BannerSearchV1 = () => {
@@ -22,7 +22,7 @@ const BannerSearchV1 = () => {
       {/* End Mobile Nav  */}
 
       {/* Home Banner Style V1 */}
-      <PropertyFilteringBanner/>
+      <PropertyFilteringBanner />
       {/* Property Filtering */}
 
       {/* Start Our Footer */}

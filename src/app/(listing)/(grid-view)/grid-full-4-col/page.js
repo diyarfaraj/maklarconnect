@@ -5,11 +5,10 @@ import MobileMenu from "@/components/common/mobile-menu";
 
 import ProperteyFiltering from "@/components/listing/grid-view/grid-full-4-col/PropertyFiltering";
 
-
 import React from "react";
 
 export const metadata = {
-  title: "Gird Full 4 Column || Homez - Real Estate NextJS Template",
+  title: "Gird Full 4 Column || MäklarConnect - Real Estate NextJS Template",
 };
 
 const GridFull4Col = () => {
@@ -51,8 +50,8 @@ const GridFull4Col = () => {
       {/* End Breadcumb Sections */}
 
       {/* Property Filtering */}
-      <ProperteyFiltering/>
-      
+      <ProperteyFiltering />
+
       {/* Property Filtering */}
 
       {/* Start Our Footer */}
