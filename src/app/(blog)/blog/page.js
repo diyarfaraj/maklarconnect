@@ -1,5 +1,5 @@
 import Pagination from "@/components/blog/Pagination";
-import Blog from "@/components/blog/blog-list-v1/Blog";
+import Blog from "@/components/blog/Blog";
 import BlogSidebar from "@/components/blog/sidebar";
 import DefaultHeader from "@/components/common/DefaultHeader";
 import Footer from "@/components/common/default-footer";
@@ -9,7 +9,7 @@ export const metadata = {
   title: "Blog List v1  || MäklarConnect - Real Estate NextJS Template",
 };
 
-const BlogV1 = () => {
+const BlogMain = () => {
   return (
     <div className="bgc-f7">
       {/* Main Header Nav */}
@@ -76,4 +76,4 @@ const BlogV1 = () => {
   );
 };
 
-export default BlogV1;
+export default BlogMain;

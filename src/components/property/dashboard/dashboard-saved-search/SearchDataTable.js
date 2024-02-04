@@ -5,7 +5,7 @@ import { Tooltip as ReactTooltip } from "react-tooltip";
 const listingData = [
   {
     title: "Equestrian Family Home",
-    date: "December 31, 2022",
+    date: "December 32, 2022",
   },
   {
     title: "Luxury villa in Rego Park",

@@ -20,7 +20,7 @@ export const metadata = {
   title: "Home v1 || MäklarConnect - Real Estate NextJS Template",
 };
 
-const Home_V1 = () => {
+const Home = () => {
   return (
     <>
       {/* Main Header Nav */}
@@ -348,4 +348,4 @@ const Home_V1 = () => {
   );
 };
 
-export default Home_V1;
+export default Home;

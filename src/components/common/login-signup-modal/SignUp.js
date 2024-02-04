@@ -1,6 +1,21 @@
+"use client"
 import Link from "next/link";
+import { useEffect } from "react";
 
 const SignUp = () => {
+
+  useEffect(() => {
+    
+  
+    return () => {
+    console.log('diyarrrrrrrrrrr unmount')
+    const modalBackdrop = document.querySelector(".modal-backdrop");
+    if (modalBackdrop) {
+      modalBackdrop.remove();
+    }
+    }
+  }, [])
+  
   return (
     <form className="form-style1">
       <div className="mb25">
