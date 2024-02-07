@@ -1,16 +1,53 @@
+"use client";
+import React, { useState } from "react";
 import Link from "next/link";
-import React from "react";
-
+import axios from "axios";
+import Cookies from 'js-cookie'; // If you're handling cookies directly here
+import { useAuth } from "@/app/context/store";
 const SignIn = () => {
+  const { login } = useAuth(); // Use the login function from the context
+  const [formData, setFormData] = useState({ email: '', password: '' });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const { email, password } = formData;
+      if (email && password) {
+        // Replace with your login API endpoint
+        const { data: { jwt } } = await axios.post(
+          `${process.env.NEXT_PUBLIC_SERVER_URL}/api/auth/login`,
+          { email, password }
+        );
+
+        console.log(jwt);
+        // Save the JWT token
+        Cookies.set('auth-token', jwt); // Optional: Handle token directly with js-cookie
+        login(jwt); // Or just use the login function from context if it handles cookies
+
+        // Redirect to dashboard or home page
+        // window.location.href = '/dashboard';
+      }
+    } catch (error) {
+      console.error("Sign-in error", error.response?.data || error.message);
+      // Handle sign-in error (e.g., show an error message)
+    }
+  };
+
   return (
-    <form className="form-style1">
+    <form className="form-style1" onSubmit={handleSubmit}>
       <div className="mb25">
         <label className="form-label fw600 dark-color">Email</label>
         <input
           type="email"
+          name="email"
           className="form-control"
           placeholder="Enter Email"
           required
+          onChange={handleChange}
         />
       </div>
       {/* End email */}
@@ -18,14 +55,15 @@ const SignIn = () => {
       <div className="mb15">
         <label className="form-label fw600 dark-color">Password</label>
         <input
-          type="text"
+          type="password"
+          name="password"
           className="form-control"
           placeholder="Enter Password"
           required
+          onChange={handleChange}
         />
       </div>
       {/* End Password */}
-
       <div className="checkbox-style1 d-block d-sm-flex align-items-center justify-content-between mb10">
         <label className="custom_checkbox fz14 ff-heading">
           Remember me

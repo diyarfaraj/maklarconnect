@@ -5,6 +5,11 @@ import "aos/dist/aos.css";
 import "../../public/scss/main.scss";
 import { DM_Sans, Poppins } from "next/font/google";
 import { useEffect } from "react";
+import { AuthProvider } from "@/app/context/store";
+import axios from "axios";
+import Cookies from 'js-cookie';
+
+axios.defaults.headers.common['Authorization'] = `Bearer ${Cookies.get('auth-token')}`;
 
 if (typeof window !== "undefined") {
   import("bootstrap");
@@ -38,7 +43,9 @@ export default function RootLayout({ children }) {
         className={`body  ${poppins.className} ${dmSans.className}`}
         cz-shortcut-listen="false"
       >
-        <div className="wrapper ovh">{children}</div>
+        <div className="wrapper ovh">
+          <AuthProvider>{children}</AuthProvider>
+        </div>
 
         <ScrollToTop />
       </body>

@@ -11,10 +11,8 @@ const SignUp = () => {
   // const [, dispatch] = useStateProvider(); // Assuming this is how your context is set up
 
   useEffect(() => {
-    // ... existing useEffect logic ...
 
     return () => {
-      // ... existing cleanup logic ...
     };
   }, []);
 
@@ -30,7 +28,7 @@ const SignUp = () => {
       const { email, password } = formData;
       if (email && password) {
         const { data: { user, jwt } } = await axios.post(
-          'http://localhost:8747/api/auth/signup', // Assuming this is the route for signup
+          `${process.env.NEXT_PUBLIC_SERVER_URL}/api/auth/signup`, // Assuming this is the route for signup
           { email, password },
           { withCredentials: true }
         );
