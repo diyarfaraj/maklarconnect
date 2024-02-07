@@ -3,7 +3,12 @@
 import { createContext, useContext, Dispatch, SetStateAction, useState, useEffect } from "react";
 import Cookies from 'js-cookie';
 
-const AuthContext = createContext(null);
+// Define the context with a default shape
+const AuthContext = createContext({
+    isLoggedIn: false,
+    login: () => { },
+    logout: () => { },
+});
 
 export const useAuth = () => useContext(AuthContext);
 

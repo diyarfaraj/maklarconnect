@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Link from "next/link";
 import { useCookies } from "react-cookie";
-// import { SIGNUP_ROUTE } from "@/utils/constants"; // Import your routes
 
 const SignUp = () => {
   const [formData, setFormData] = useState({ email: '', password: '' });
@@ -53,12 +52,12 @@ const SignUp = () => {
       <div className="mb25">
         <label className="form-label fw600 dark-color">Email</label>
         <input
-        type="email"
-        name="email"
-        className="form-control"
-        placeholder="Enter Email"
-        required
-        onChange={handleChange}
+          type="email"
+          name="email"
+          className="form-control"
+          placeholder="Enter Email"
+          required
+          onChange={handleChange}
         />
       </div>
       {/* End Email */}
@@ -66,12 +65,12 @@ const SignUp = () => {
       <div className="mb20">
         <label className="form-label fw600 dark-color">Password</label>
         <input
-         type="password"
-        name="password"
-        className="form-control"
-        placeholder="Enter Password"
-        required
-        onChange={handleChange}
+          type="password"
+          name="password"
+          className="form-control"
+          placeholder="Enter Password"
+          required
+          onChange={handleChange}
         />
       </div>
       {/* End Password */}

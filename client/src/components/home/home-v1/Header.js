@@ -6,9 +6,11 @@ import LoginSignupModal from "@/components/common/login-signup-modal";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import { useAuth } from "@/app/context/store";
 
 const Header = () => {
   const [navbar, setNavbar] = useState(false);
+  const { isLoggedIn } = useAuth();
 
   const changeBackground = () => {
     if (window.scrollY >= 10) {
@@ -28,9 +30,8 @@ const Header = () => {
   return (
     <>
       <header
-        className={`header-nav nav-homepage-style main-menu  ${
-          navbar ? "sticky slideInDown animated" : ""
-        }`}
+        className={`header-nav nav-homepage-style main-menu  ${navbar ? "sticky slideInDown animated" : ""
+          }`}
       >
         <nav className="posr">
           <div className="container posr menu_bdrt1">
@@ -65,18 +66,20 @@ const Header = () => {
 
               <div className="col-auto">
                 <div className="d-flex align-items-center">
-                  <a
-                    href="#"
-                    className="login-info d-flex align-items-center"
-                    data-bs-toggle="modal"
-                    data-bs-target="#loginSignupModal"
-                    role="button"
-                  >
-                    <i className="far fa-user-circle fz16 me-2" />{" "}
-                    <span className="d-none d-xl-block">
-                      Logga in / Registrera
-                    </span>
-                  </a>
+                  {isLoggedIn ? (
+                    <span className="login-info">Hello, User</span>
+                  ) : (
+                    <a
+                      href="#"
+                      className="login-info d-flex align-items-center"
+                      data-bs-toggle="modal"
+                      data-bs-target="#loginSignupModal"
+                      role="button"
+                    >
+                      <i className="far fa-user-circle fz16 me-2" />{" "}
+                      <span className="d-none d-xl-block">Login / Register</span>
+                    </a>
+                  )}
                   <Link
                     className="ud-btn add-property menu-btn bdrs60 mx-2 mx-xl-4"
                     href="/dashboard-add-property"
