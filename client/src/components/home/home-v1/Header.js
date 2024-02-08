@@ -69,16 +69,10 @@ const Header = () => {
                   {isLoggedIn ? (
                     <span className="login-info">Hello, User</span>
                   ) : (
-                    <a
-                      href="#"
-                      className="login-info d-flex align-items-center"
-                      data-bs-toggle="modal"
-                      data-bs-target="#loginSignupModal"
-                      role="button"
-                    >
-                      <i className="far fa-user-circle fz16 me-2" />{" "}
-                      <span className="d-none d-xl-block">Login / Register</span>
-                    </a>
+                    <Link href="/login">
+                      <i className="far fa-user-circle fz16 me-2"></i>
+                      <span className="d-none d-xl-block">Logga in</span>
+                    </Link>
                   )}
                   <Link
                     className="ud-btn add-property menu-btn bdrs60 mx-2 mx-xl-4"

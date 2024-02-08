@@ -9,6 +9,7 @@ const MenuItems = () => {
     { id: 7, title: "Villa" },
   ];
 
+  // TODO: change this to profile button, logout button, messages, notifications, etc
   return (
     <ul className="navbar-nav">
       {menuItems.map((item) => (

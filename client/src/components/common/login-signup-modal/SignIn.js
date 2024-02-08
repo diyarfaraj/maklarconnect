@@ -16,6 +16,9 @@ const SignIn = () => {
     e.preventDefault();
     try {
       const { email, password } = formData;
+
+      if (!email || !password) return alert('Please fill in all fields');
+
       if (email && password) {
         // Replace with your login API endpoint
         const { data: { jwt } } = await axios.post(
@@ -29,7 +32,7 @@ const SignIn = () => {
         login(jwt); // Or just use the login function from context if it handles cookies
 
         // Redirect to dashboard or home page
-        // window.location.href = '/dashboard';
+        window.location.href = '/';
       }
     } catch (error) {
       console.error("Sign-in error", error.response?.data || error.message);
