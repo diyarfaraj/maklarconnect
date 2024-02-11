@@ -7,6 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { useAuth } from "@/app/context/store";
+import UserMenu from "@/components/common/UserMenu";
 
 const Header = () => {
   const [navbar, setNavbar] = useState(false);
@@ -30,8 +31,7 @@ const Header = () => {
   return (
     <>
       <header
-        className={`header-nav nav-homepage-style main-menu  ${navbar ? "sticky slideInDown animated" : ""
-          }`}
+        className="header-nav nav-homepage-style main-menu "
       >
         <nav className="posr">
           <div className="container posr menu_bdrt1">
@@ -66,14 +66,6 @@ const Header = () => {
 
               <div className="col-auto">
                 <div className="d-flex align-items-center">
-                  {isLoggedIn ? (
-                    <span className="login-info">Hello, User</span>
-                  ) : (
-                    <Link href="/login">
-                      <i className="far fa-user-circle fz16 me-2" style={{ color: 'white' }} ></i>
-                      <span className=" login-info">Logga in</span>
-                    </Link>
-                  )}
                   <Link
                     className="ud-btn add-property menu-btn bdrs60 mx-2 mx-xl-4"
                     href="/dashboard-add-property"
@@ -81,7 +73,16 @@ const Header = () => {
                     Skapa bevakning
                     <i className="fal fa-arrow-right-long" />
                   </Link>
-                  <a
+                  {isLoggedIn ? (
+                    <UserMenu />
+                  ) : (
+                    <Link href="/login">
+                      <i className="far fa-user-circle fz16 me-2" style={{ color: 'white' }} ></i>
+                      <span className=" login-info">Logga in</span>
+                    </Link>
+                  )}
+
+                  {/* <a
                     className="sidemenu-btn filter-btn-right"
                     href="#"
                     data-bs-toggle="offcanvas"
@@ -103,7 +104,7 @@ const Header = () => {
                       src="/images/icon/nav-icon-dark.svg"
                       alt="humberger menu"
                     />
-                  </a>
+                  </a> */}
                 </div>
               </div>
               {/* End .col-auto */}
@@ -131,14 +132,14 @@ const Header = () => {
       {/* End Signup Modal */}
 
       {/* DesktopSidebarMenu */}
-      <div
+      {/* <div
         className="offcanvas offcanvas-end"
         tabIndex="-1"
         id="SidebarPanel"
         aria-labelledby="SidebarPanelLabel"
       >
         <SidebarPanel />
-      </div>
+      </div> */}
       {/* Sidebar Panel End */}
     </>
   );

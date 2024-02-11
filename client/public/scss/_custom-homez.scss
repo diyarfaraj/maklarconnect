@@ -1,6 +1,7 @@
 html {
     scroll-behavior: smooth !important;
 }
+
 .nav-tabs .nav-link {
     margin-bottom: 0;
 }
@@ -9,6 +10,7 @@ html {
     -o-object-fit: cover !important;
     object-fit: cover !important;
 }
+
 .contain {
     -o-object-fit: contain !important;
     object-fit: contain !important;
@@ -19,12 +21,15 @@ html {
     -webkit-box-shadow: none;
     box-shadow: none;
 }
+
 .dropdown-menu {
     border: none;
 }
+
 .pointer {
     cursor: pointer;
 }
+
 // bootstrap large screen container size
 @keyframes fadeInUp {
     0% {
@@ -41,6 +46,7 @@ html {
         transform: translateY(0);
     }
 }
+
 @-webkit-keyframes fadeInUp {
     0% {
         opacity: 0;
@@ -61,6 +67,7 @@ html {
 }
 
 @media (min-width: 1400px) {
+
     .container,
     .container-lg,
     .container-md,
@@ -70,6 +77,7 @@ html {
         max-width: 1230px;
     }
 }
+
 @-webkit-keyframes slideInDown {
     0% {
         -webkit-transform: translate3d(0, -100%, 0);
@@ -82,6 +90,7 @@ html {
         transform: translate3d(0, 0, 0);
     }
 }
+
 @keyframes slideInDown {
     0% {
         -webkit-transform: translate3d(0, -100%, 0);
@@ -99,6 +108,7 @@ html {
     -webkit-animation-name: slideInDown;
     animation-name: slideInDown;
 }
+
 .animated {
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
@@ -116,7 +126,8 @@ html {
 // mobile menu
 .mobilie_header_nav {
     .hsidebar-header {
-        background: rgba(235, 103, 83, 0.07);
+        background: transparent;
+
         .sidebar-close-icon {
             background-color: #eb6753;
             color: #fff;
@@ -125,22 +136,27 @@ html {
 
     .my-custom-class {
         margin-bottom: 35px;
+
         .ps-menu-root ul li {
             font-size: 15px;
             font-weight: 600;
         }
-        .ps-menu-root > ul > li > .ps-menu-button {
+
+        .ps-menu-root>ul>li>.ps-menu-button {
             padding-left: 30px;
             padding-right: 30px;
         }
+
         &.ps-sidebar-root .css-honxw6,
         &.ps-sidebar-root .css-jn69v9 {
             width: 7px;
             height: 7px;
         }
-        &.ps-sidebar-root .ps-menuitem-root.active > .ps-menu-button span {
+
+        &.ps-sidebar-root .ps-menuitem-root.active>.ps-menu-button span {
             color: #eb6753;
         }
+
         .ps-menu-button.active {
             color: #eb6753;
         }
@@ -150,6 +166,7 @@ html {
 // react slect css
 .select-custom {
     width: 100%;
+
     .select__control {
         border-radius: 8px;
         border: 1px solid #dddddd;
@@ -158,6 +175,7 @@ html {
         min-height: 55px;
         outline: none;
         padding-left: 15px;
+
         &:hover {
             border-color: #dddddd;
         }
@@ -167,20 +185,24 @@ html {
             border: 2px solid #000 !important;
         }
     }
+
     .select__indicator-separator {
         background-color: #ddd;
     }
+
     &.pl-0 {
         .select__control {
             padding-left: 7px;
         }
     }
 }
+
 .reset-button {
     outline: none;
     background: transparent;
     border: none;
 }
+
 // input range slider
 .range-wrapper {
     .input-range__slider {
@@ -198,10 +220,12 @@ html {
         -o-box-shadow: 0px 0px 5px 0px rgba(19, 19, 28, 0.2);
         box-shadow: 0px 0px 5px 0px rgba(19, 19, 28, 0.2);
     }
+
     .input-range__track--active {
         background-color: var(--headings-color);
         border-radius: 30px;
     }
+
     .input-range {
         margin-bottom: 25px;
     }
@@ -211,13 +235,17 @@ html {
 .select-borderless {
     .select__control {
         border: none;
+
         &.select__control--is-focused,
         &.select__control--menu-is-open {
             -webkit-box-shadow: none !important;
-            box-shadow: none !important; /* Remove box-shadow */
-            border-color: transparent; /* Remove border color */
+            box-shadow: none !important;
+            /* Remove box-shadow */
+            border-color: transparent;
+            /* Remove border color */
         }
     }
+
     .select__indicator-separator {
         background-color: transparent;
     }
@@ -228,25 +256,30 @@ html {
     background: transparent;
     border: none;
 }
+
 // home 3 hero
 .advance-content-style3 .select-borderless {
     border-radius: 12px;
 }
+
 .advance-content-style3 .bootselect-multiselect .select__control {
     background-color: #f7f7f7;
     line-height: 50px;
     height: 55px;
     border-radius: 12px;
 }
+
 .advance-content-style3.at-home5 .bootselect-multiselect .select__control {
     background-color: transparent;
     cursor: pointer;
     height: auto;
     line-height: initial;
 }
+
 .advance-content-style3.at-home5 .select__value-container {
     padding: 0;
 }
+
 // home 3 header sticky humberer icon
 header.nav-homepage-style.sticky.at-home3 .sidemenu-btn .img-1 {
     display: block;
@@ -259,9 +292,11 @@ header.nav-homepage-style.sticky.at-home3 .sidemenu-btn .img-1 {
         border-color: #ddd;
         border-radius: 8px;
     }
+
     .select__multi-value {
         border-radius: 4px;
     }
+
     .select__indicator-separator {
         display: none;
     }
@@ -273,9 +308,11 @@ header.nav-homepage-style.sticky.at-home3 .sidemenu-btn .img-1 {
     background-color: #fff;
     -webkit-box-shadow: 0px 1px 4px rgba(24, 26, 32, 0.07);
     box-shadow: 0px 1px 4px rgba(24, 26, 32, 0.07);
+
     &.sticky {
         position: fixed;
     }
+
     .login-info {
         color: var(--headings-color);
     }
@@ -291,9 +328,11 @@ header.nav-homepage-style.light-header .ace-responsive-menu a {
         width: 300px !important;
     }
 }
+
 .custom-react_select {
     text-align: left;
     width: 100%;
+
     .select__control {
         min-height: 55px;
         border-color: #ddd;
@@ -310,6 +349,7 @@ header.nav-homepage-style.light-header .ace-responsive-menu a {
     transform: translateY(-50%);
     right: 20%;
     z-index: 1;
+
     @media (max-width: 1199px) {
         left: 40px;
         top: auto;
@@ -319,9 +359,11 @@ header.nav-homepage-style.light-header .ace-responsive-menu a {
         transform: none;
         bottom: -35%;
     }
+
     @media (max-width: 575px) {
         left: 15px;
     }
+
     img {
         width: 55px !important;
         height: 55px;
@@ -337,13 +379,15 @@ header.nav-homepage-style.light-header .ace-responsive-menu a {
         transition: 0.3s;
         opacity: 0.5;
     }
+
     .swiper-slide-thumb-active {
         img {
             border-color: #fff;
             opacity: 1;
         }
     }
-    .swiper-vertical > .swiper-wrapper {
+
+    .swiper-vertical>.swiper-wrapper {
         @media (max-width: 1199px) {
             -webkit-box-orient: horizontal;
             -webkit-box-direction: normal;
@@ -361,6 +405,7 @@ header.nav-homepage-style.light-header .ace-responsive-menu a {
         }
     }
 }
+
 // sale sticker new css
 .sale-sticker-wrap {
     position: absolute;
@@ -372,6 +417,7 @@ header.nav-homepage-style.light-header .ace-responsive-menu a {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+
     .list-tag,
     .list-tag2 {
         margin-right: 8px;
@@ -384,16 +430,20 @@ header.nav-homepage-style.light-header .ace-responsive-menu a {
     padding: 0 10px;
     border-color: #ddd;
 }
+
 .pcs_dropdown .form-select {
     border: none;
     font-size: 15px;
     background-color: transparent;
 }
+
 #map iframe {
     height: 100%;
 }
+
 .over_overlay {
     position: relative;
+
     &::before {
         content: "";
         position: absolute;
@@ -405,6 +455,7 @@ header.nav-homepage-style.light-header .ace-responsive-menu a {
         background: rgba(0, 0, 0, 0.4);
     }
 }
+
 .user_setting .dropdown-menu {
     max-height: 450px;
     overflow-y: auto;
@@ -433,15 +484,18 @@ header.nav-homepage-style.light-header .ace-responsive-menu a {
     width: 240px;
     height: 220px;
 }
+
 .dashboard_navigationbar .dropdown-content a.-is-active {
     background-color: #181a20;
     color: #ffffff;
 }
+
 .hero_9 {
     @media (max-width: 1199.98px) {
         .item {
             height: 100%;
         }
+
         .slider-slide-item {
             height: 100%;
         }
