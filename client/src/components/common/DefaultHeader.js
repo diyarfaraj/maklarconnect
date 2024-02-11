@@ -6,8 +6,11 @@ import LoginSignupModal from "@/components/common/login-signup-modal";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import UserMenu from "./UserMenu";
+import { useAuth } from "@/app/context/store";
 
 const DefaultHeader = () => {
+  const { isLoggedIn } = useAuth();
   const [navbar, setNavbar] = useState(false);
 
   const changeBackground = () => {
@@ -64,24 +67,24 @@ const DefaultHeader = () => {
 
               <div className="col-auto">
                 <div className="d-flex align-items-center">
-                  <a
-                    href="#"
-                    className="login-info d-flex align-items-cente"
-                    data-bs-toggle="modal"
-                    data-bs-target="#loginSignupModal"
-                    role="button"
-                  >
-                    <i className="far fa-user-circle fz16 me-2" />{" "}
-                    <span className="d-none d-xl-block">Login / Register</span>
-                  </a>
                   <Link
                     className="ud-btn btn-white add-property bdrs60 mx-2 mx-xl-4"
                     href="/dashboard-add-property"
                   >
-                    Add Property
+                    Skapa bevakning
                     <i className="fal fa-arrow-right-long" />
                   </Link>
-                  <a
+
+                  {isLoggedIn ? (
+                    <UserMenu />
+                  ) : (
+                    <Link href="/login">
+                      <i className="far fa-user-circle fz16 me-2" style={{ color: 'white' }} ></i>
+                      <span className=" login-info">Logga in</span>
+                    </Link>
+                  )}
+
+                  {/* <a
                     className="sidemenu-btn filter-btn-right"
                     href="#"
                     data-bs-toggle="offcanvas"
@@ -102,7 +105,7 @@ const DefaultHeader = () => {
                       src="/images/dark-nav-icon.svg"
                       alt="humberger menu"
                     />
-                  </a>
+                  </a> */}
                 </div>
               </div>
               {/* End .col-auto */}
