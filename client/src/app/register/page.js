@@ -31,7 +31,7 @@ const Register = () => {
                       width={138}
                       height={44}
                       className="mb25"
-                      src="/images/header-logo2.png"
+                      src="/images/header-logo2.svg"
                       alt="logo"
                     />
                   </Link>

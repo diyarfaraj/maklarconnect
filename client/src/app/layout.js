@@ -9,7 +9,8 @@ import { AuthProvider } from "@/app/context/store";
 import axios from "axios";
 import Cookies from 'js-cookie';
 
-axios.defaults.headers.common['Authorization'] = `Bearer ${Cookies.get('auth-token')}`;
+// Set the default headers for axios api calls
+axios.defaults.headers.common['Authorization'] = `Bearer ${Cookies.get('mc_auth-token')}`;
 
 if (typeof window !== "undefined") {
   import("bootstrap");

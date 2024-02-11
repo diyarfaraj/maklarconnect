@@ -4,6 +4,7 @@ import Link from "next/link";
 import axios from "axios";
 import Cookies from 'js-cookie'; // If you're handling cookies directly here
 import { useAuth } from "@/app/context/store";
+
 const SignIn = () => {
   const { login } = useAuth(); // Use the login function from the context
   const [formData, setFormData] = useState({ email: '', password: '' });
@@ -28,7 +29,6 @@ const SignIn = () => {
 
         console.log(jwt);
         // Save the JWT token
-        Cookies.set('auth-token', jwt); // Optional: Handle token directly with js-cookie
         login(jwt); // Or just use the login function from context if it handles cookies
 
         // Redirect to dashboard or home page

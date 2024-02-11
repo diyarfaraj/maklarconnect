@@ -26,7 +26,7 @@ const SidebarPanel = () => {
 
           <div className="hiddenbar_footer position-relative bdrt1">
             <div className="row pt45 pb30 pl30">
-              <ContactInfo />
+              {/* <ContactInfo /> */}
             </div>
             {/* End .row */}
 

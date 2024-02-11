@@ -83,14 +83,14 @@ const DashboardHeader = () => {
                       <Image
                         width={138}
                         height={44}
-                        src="/images/header-logo2.png"
+                        src="/images/header-logo2.svg"
                         alt="Header Logo"
                       />
                     </Link>
                   </div>
                   {/* End Logo */}
 
-                  <a
+                  {/* <a
                     className="dashboard_sidebar_toggle_icon text-thm1 vam"
                     href="#"
                     data-bs-toggle="offcanvas"
@@ -104,7 +104,7 @@ const DashboardHeader = () => {
                       src="/images/dark-nav-icon.svg"
                       alt="humberger menu"
                     />
-                  </a>
+                  </a> */}
                 </div>
               </div>
               {/* End .col-auto */}
@@ -115,11 +115,12 @@ const DashboardHeader = () => {
               </div>
               {/* End d-none d-lg-block */}
 
+              {/* TODO:: move this to its own component, show it when logged in*/}
               <div className="col-6 col-lg-auto">
                 <div className="text-center text-lg-end header_right_widgets">
                   <ul className="mb0 d-flex justify-content-center justify-content-sm-end p-0">
                     <li className="d-none d-sm-block">
-                      <Link className="text-center mr15" href="/login">
+                      <Link className="text-center mr15" href="/dashboard-message">
                         <span className="flaticon-email" />
                       </Link>
                     </li>
@@ -147,18 +148,16 @@ const DashboardHeader = () => {
                             {menuItems.map((section, sectionIndex) => (
                               <div key={sectionIndex}>
                                 <p
-                                  className={`fz15 fw400 ff-heading ${
-                                    sectionIndex === 0 ? "mb20" : "mt30"
-                                  }`}
+                                  className={`fz15 fw400 ff-heading ${sectionIndex === 0 ? "mb20" : "mt30"
+                                    }`}
                                 >
                                   {section.title}
                                 </p>
                                 {section.items.map((item, itemIndex) => (
                                   <Link
                                     key={itemIndex}
-                                    className={`dropdown-item ${
-                                      pathname == item.href ? "-is-active" : ""
-                                    } `}
+                                    className={`dropdown-item ${pathname == item.href ? "-is-active" : ""
+                                      } `}
                                     href={item.href}
                                   >
                                     <i className={`${item.icon} mr10`} />

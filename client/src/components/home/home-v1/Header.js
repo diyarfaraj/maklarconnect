@@ -43,7 +43,7 @@ const Header = () => {
                       <Image
                         width={138}
                         height={60}
-                        src="/images/header-logo.png"
+                        src="/images/header-logo.svg"
                         alt="Header Logo"
                       />
                     </Link>
@@ -51,7 +51,7 @@ const Header = () => {
                       <Image
                         width={138}
                         height={44}
-                        src="/images/header-logo2.png"
+                        src="/images/header-logo2.svg"
                         alt="Header Logo"
                       />
                     </Link>
@@ -70,8 +70,8 @@ const Header = () => {
                     <span className="login-info">Hello, User</span>
                   ) : (
                     <Link href="/login">
-                      <i className="far fa-user-circle fz16 me-2"></i>
-                      <span className="d-none d-xl-block">Logga in</span>
+                      <i className="far fa-user-circle fz16 me-2" style={{ color: 'white' }} ></i>
+                      <span className=" login-info">Logga in</span>
                     </Link>
                   )}
                   <Link

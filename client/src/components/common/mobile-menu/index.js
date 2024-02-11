@@ -1,11 +1,25 @@
 "use client";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import ContactInfo from "./ContactInfo";
 import Social from "./Social";
 import ProSidebarContent from "./ProSidebarContent";
+import ContactInfo from "../sidebar-panel/ContactInfo";
+import MenuItems from "../sidebar-panel/MenuItems";
+import { useAuth } from "@/app/context/store";
 
 const MobileMenu = () => {
+  const { isLoggedIn } = useAuth();
+
+  useEffect(() => {
+    console.log("MobileMenu.js: useEffect isLoggedIn: ", isLoggedIn);
+
+    return () => {
+
+    }
+  }, [])
+
+
   return (
     <div className="mobilie_header_nav stylehome1">
       <div className="mobile-menu">
@@ -30,11 +44,11 @@ const MobileMenu = () => {
                 <Image
                   width={138}
                   height={44}
-                  src="/images/header-logo2.png"
+                  src="/images/header-logo2.svg"
                   alt="logo"
                 />
               </Link>
-              <Link href="/login">
+              <Link href={isLoggedIn ? "dashboard-my-profile" : "/login"}>
                 <span className="icon fz18 far fa-user-circle" />
               </Link>
             </div>
@@ -67,11 +81,14 @@ const MobileMenu = () => {
             <div className="hiddenbar_navbar_content">
               <ProSidebarContent />
               {/* End .hiddenbar_navbar_menu */}
-
               <div className="hiddenbar_footer position-relative bdrt1">
-                <div className="row pt45 pb30 pl30">
-                  <ContactInfo />
-                </div>
+                {isLoggedIn &&
+
+                  <div className="row pt45 pb30 pl30">
+                    {/* <ContactInfo /> */}
+
+                    <MenuItems />
+                  </div>}
                 {/* End .row */}
 
                 <div className="row pt30 pb30 bdrt1">

@@ -17,24 +17,29 @@ export const AuthProvider = ({ children }) => {
 
     useEffect(() => {
         // Check if token is stored in cookies on initial load
-        console.log("Checking if user is logged in");
-        const token = Cookies.get('auth-token');
+        console.log("Store.js: Checking if user is logged in");
+        const token = Cookies.get('mc_auth-token');
 
-        console.log("Token found: ", token);
+        console.log("Store.js: Token found: ", token);
 
         if (token) {
             setIsLoggedIn(true);
-            console.log("User is logged in");
+            console.log("Store.js: User is logged in");
+            console.log("Store.js: isLoggedIn: ", isLoggedIn);
         }
     }, []);
 
-    const login = () => {
+    const login = (token) => {
+        Cookies.set('mc_auth-token', token, { expires: 7 });
         setIsLoggedIn(true);
         // Additional login logic
-        console.log("login function called");
+        console.log("Store.js: login function called");
+        console.log("Store.js: isLoggedIn: ", isLoggedIn);
+
     };
 
     const logout = () => {
+        Cookies.remove('mc_auth-token');
         setIsLoggedIn(false);
         // Additional logout logic
     };

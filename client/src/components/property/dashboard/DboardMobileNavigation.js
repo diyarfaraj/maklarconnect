@@ -2,8 +2,10 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { usePathname } from "next/navigation";
+import { useAuth } from "@/app/context/store";
 
 const DboardMobileNavigation = () => {
+  const { logout } = useAuth();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const pathname = usePathname();
 
@@ -67,9 +69,12 @@ const DboardMobileNavigation = () => {
           text: "My Profile",
         },
         {
-          href: "/login",
           icon: "flaticon-logout",
           text: "Logout",
+          action: () => {
+            logout();
+            window.location.href = "/";
+          },
         },
       ],
     },
@@ -88,24 +93,30 @@ const DboardMobileNavigation = () => {
           {sidebarItems.map((section, sectionIndex) => (
             <div key={sectionIndex}>
               <p
-                className={`fz15 fw400 ff-heading mt30 pl30 ${
-                  sectionIndex === 0 ? "mt-0" : "mt30"
-                }`}
+                className={`fz15 fw400 ff-heading mt30 pl30 ${sectionIndex === 0 ? "mt-0" : "mt30"
+                  }`}
               >
                 {section.title}
               </p>
               {section.items.map((item, itemIndex) => (
-                <div key={itemIndex} className="sidebar_list_item">
-                  <Link
-                    href={item.href}
-                    className={`items-center   ${
-                      pathname == item.href ? "-is-active" : ""
-                    } `}
-                  >
-                    <i className={`${item.icon} mr15`} />
-                    {item.text}
-                  </Link>
-                </div>
+                <li key={itemIndex} className="sidebar_list_item">
+                  {item.action ? (
+                    <Link href="/">
+                      <div onClick={item.action} className="logout-button">
+                        <i className={`${item.icon} mr15`}></i>
+                        {item.text}
+                      </div>
+                    </Link>
+
+                  ) : (
+                    <Link href={item.href || "#"} className={`items-center ${pathname === item.href ? "-is-active" : ""}`}>
+                      <div>
+                        <i className={`${item.icon} mr15`} />
+                        {item.text}
+                      </div>
+                    </Link>
+                  )}
+                </li>
               ))}
             </div>
           ))}
