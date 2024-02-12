@@ -25,7 +25,7 @@ const DashboardMyProperties = () => {
       {/* dashboard_content_wrapper */}
       <div className="dashboard_content_wrapper">
         <div className="dashboard dashboard_wrapper pr30 pr0-xl">
-          <SidebarDashboard />
+          {/* <SidebarDashboard /> */}
           {/* End .dashboard__sidebar */}
 
           <div className="dashboard__main pl0-md">
