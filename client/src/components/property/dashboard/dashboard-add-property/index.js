@@ -139,6 +139,13 @@ const AddPropertyTabContent = () => {
         </div>
         {/* End tab for Select Amenities */}
       </div>
+      <div className="text-center mt-4">
+        <div className="text-center my-4" style={{ paddingBottom: '20px' }}> {/* Adjust the padding as needed */}
+          <button className="btn btn-primary" type="button">
+            Lägg till fastighet
+          </button>
+        </div>
+      </div>
     </>
   );
 };
