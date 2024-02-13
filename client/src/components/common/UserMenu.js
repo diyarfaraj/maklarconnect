@@ -86,15 +86,23 @@ const UserMenu = () => {
                     {/* End email icon */}
 
                     <li className="d-none d-sm-block">
-                        <a className="text-center mr20 notif" href="#">
+                        <a className="text-center mr20 notif" href="/dashboard-home">
                             <span className="flaticon-bell" />
                         </a>
                     </li>
                     {/* End notification icon */}
+
                     {/* Additional items like notifications can be handled here */}
                     <li className="user_setting d-none d-sm-block">
                         <div className="dropdown">
-                            <a className=" mr20 notif" href="#" data-bs-toggle="dropdown">
+                            <a className="text-center mr20 notif" style={{
+                                backgroundColor: "rgba(247, 247, 247, 0.3921568627)",
+                                borderRadius: '50%',
+                                height: '44px',
+                                lineHeight: '44px',
+                                textAlign: 'center',
+                                width: '44px',
+                            }} href="#" data-bs-toggle="dropdown">
                                 {/* <Image
                                     width={44}
                                     height={44}
@@ -139,7 +147,7 @@ const UserMenu = () => {
                     </li>
                 </ul>
             </div>
-        </div>
+        </div >
     );
 };
 
