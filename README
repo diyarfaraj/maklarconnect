@@ -1,0 +1,13 @@
+server:
+npm install
+npm start
+
+client:
+yarn
+yarn dev
+
+for pushing and generating prisma:
+
+1. npx prisma db push
+2. npx prisma generate
+3. go to mongodb and insert the documents to the collection manually
