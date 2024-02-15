@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import authRoutes from "./routes/AuthRoutes.js";
 import cookieParser from "cookie-parser";
-import { gigRoutes } from "./routes/GigRoutes.js";
+import { propertyRoutes } from "./routes/PropertyRoutes.js";
 import { orderRoutes } from "./routes/OrderRoutes.js";
 import { messageRoutes } from "./routes/MessageRoutes.js";
 import { dashboardRoutes } from "./routes/DashboardRoutes.js";
@@ -28,7 +28,7 @@ app.use(cookieParser());
 app.use(express.json());
 
 app.use("/api/auth", authRoutes);
-app.use("/api/gigs", gigRoutes);
+app.use("/api/properties", propertyRoutes);
 app.use("/api/orders", orderRoutes);
 app.use("/api/messages", messageRoutes);
 app.use("/api/dashboard", dashboardRoutes);
