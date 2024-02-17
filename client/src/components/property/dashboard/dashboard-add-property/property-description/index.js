@@ -1,7 +1,7 @@
 "use client";
 import Select from "react-select";
 
-const PropertyDescription = () => {
+const PropertyDescription = ({ propertyDetails, onChange }) => {
   const catergoryOptions = [
     { value: "Apartments", label: "Apartments" },
     { value: "Bungalow", label: "Bungalow" },
@@ -24,6 +24,15 @@ const PropertyDescription = () => {
     { value: "Published", label: "Published" },
   ];
 
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    onChange({ [name]: value });
+  };
+
+  const handleSelectChange = (name, selectedOption) => {
+    onChange({ [name]: selectedOption.map(option => option.value) }); // Assuming you want to store only the values
+  };
+
   const customStyles = {
     option: (styles, { isFocused, isSelected, isHovered }) => {
       return {
@@ -31,10 +40,10 @@ const PropertyDescription = () => {
         backgroundColor: isSelected
           ? "#eb6753"
           : isHovered
-          ? "#eb675312"
-          : isFocused
-          ? "#eb675312"
-          : undefined,
+            ? "#eb675312"
+            : isFocused
+              ? "#eb675312"
+              : undefined,
       };
     },
   };
@@ -47,8 +56,11 @@ const PropertyDescription = () => {
             <label className="heading-color ff-heading fw600 mb10">Title</label>
             <input
               type="text"
+              name="title"
               className="form-control"
-              placeholder="Your Name"
+              placeholder="Enter title"
+              value={propertyDetails.title}
+              onChange={handleInputChange}
             />
           </div>
         </div>
@@ -60,10 +72,13 @@ const PropertyDescription = () => {
               Description
             </label>
             <textarea
+              name="description"
               cols={30}
               rows={5}
               placeholder="There are many variations of passages."
               defaultValue={""}
+              value={propertyDetails.description}
+              onChange={handleInputChange}
             />
           </div>
         </div>
@@ -76,12 +91,15 @@ const PropertyDescription = () => {
             </label>
             <div className="location-area">
               <Select
-                defaultValue={[catergoryOptions[1]]}
+                defaultValue={catergoryOptions.filter(option =>
+                  propertyDetails.categories?.includes(option.value)
+                )}
                 name="colors"
                 options={catergoryOptions}
                 styles={customStyles}
                 className="select-custom pl-0"
                 classNamePrefix="select"
+                onChange={(selected) => handleSelectChange('categories', selected)}
                 required
                 isMulti
               />
