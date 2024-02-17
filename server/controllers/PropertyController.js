@@ -40,7 +40,7 @@ export const addProperty = async (req, res, next) => {
         },
       });
 
-      return res.status(201).send("Successfully created the property.");
+      return res.status(201).json({ "message": "Successfully created the property." })
     }
     // }
     // return res.status(400).send("All properties should be required.");
