@@ -1,81 +1,81 @@
 'use client';
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropertyDescription from "./property-description";
 import UploadMedia from "./upload-media";
 import LocationField from "./LocationField";
 import DetailsFiled from "./details-field";
 import Amenities from "./Amenities";
 import Cookies from 'js-cookie';
+import ApplicantType from "./applicant-type";
 
 const AddPropertyTabContent = () => {
-
-  const tabs = [
-    { id: 'nav-item1-tab', title: '1. Description', active: true, target: '#nav-item1', controls: 'nav-item1' },
-    { id: 'nav-item2-tab', title: '2. Media', active: false, target: '#nav-item2', controls: 'nav-item2' },
-    { id: 'nav-item3-tab', title: '3. Location', active: false, target: '#nav-item3', controls: 'nav-item3' },
-    { id: 'nav-item4-tab', title: '4. Detail', active: false, target: '#nav-item4', controls: 'nav-item4' },
-    { id: 'nav-item5-tab', title: '5. Amenities', active: false, target: '#nav-item5', controls: 'nav-item5' },
-  ];
+  const [propertyDetails, setPropertyDetails] = useState({
+    applicantType: "",
+    title: "",
+    description: "",
+  });
+  const [active, setActive] = useState(0);
 
   const token = Cookies.get('mc_auth-token');
 
-  const [propertyDetails, setPropertyDetails] = useState({
-    title: "",
-    description: "",
-    // ... other fields ...
-  });
+  const tabs = [
+    { id: 'nav-item1-tab', title: '1. Sökande', active: true, target: '#nav-item1', controls: 'nav-item1' },
+    { id: 'nav-item2-tab', title: '2. Description', active: false, target: '#nav-item2', controls: 'nav-item2' },
+    { id: 'nav-item3-tab', title: '3. Media', active: false, target: '#nav-item3', controls: 'nav-item3' },
+    { id: 'nav-item4-tab', title: '4. Location', active: false, target: '#nav-item4', controls: 'nav-item4' },
+    { id: 'nav-item5-tab', title: '5. Detail', active: false, target: '#nav-item5', controls: 'nav-item5' },
+    { id: 'nav-item6-tab', title: '6. Amenities', active: false, target: '#nav-item6', controls: 'nav-item6' },
+  ];
 
-  const handleDetailChange = (detail) => {
-    setPropertyDetails(prevDetails => ({
-      ...prevDetails,
-      ...detail
-    }));
-  };
 
   const handleSubmit = async () => {
+    console.log(propertyDetails);
+    // if (!token) {
+    //   console.error('No token found, user is not logged in');
+    //   return;
+    // }
 
-    if (!token) {
-      console.error('No token found, user is not logged in');
-      return;
-    }
+    // try {
+    //   const response = await fetch('http://localhost:8747/api/properties/add', {
+    //     method: 'POST',
+    //     headers: {
+    //       'Content-Type': 'application/json',
+    //       'Authorization': `Bearer ${token}`,
+    //     },
+    //     body: JSON.stringify(propertyDetails),
+    //   });
 
-    try {
-      const response = await fetch('http://localhost:8747/api/properties/add', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`,
-        },
-        body: JSON.stringify(propertyDetails),
-      });
+    //   if (!response.ok) {
+    //     throw new Error(`HTTP error! status: ${response.status}`);
+    //   }
 
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
-      const result = await response.text();
-      console.log('Property added successfully:', result);
-      setPropertyDetails({
-        title: "",
-        description: "",
-        // ... other fields ...
-      });
-    } catch (error) {
-      console.error('There was an error adding the property:', error);
-    }
+    //   const result = await response.text();
+    //   console.log('Property added successfully:', result);
+    //   setPropertyDetails({
+    //     title: "",
+    //     description: "",
+    //     // ... other fields ...
+    //   });
+    // } catch (error) {
+    //   console.error('There was an error adding the property:', error);
+    // }
   };
 
-  const Tab = ({ id, title, active, target, controls }) => {
+  const nextStep = () => {
+    setActive(active + 1 < tabs.length ? active + 1 : active);
+  };
+
+  const prevStep = () => {
+    setActive((current) => (current > 0 ? current - 1 : current));
+  };
+
+  const Tab = ({ index, title, setActive }) => {
     return (
       <button
-        className={`nav-link fw600 ${active ? 'active' : ''}`}
-        id={id}
-        data-bs-toggle="tab"
-        data-bs-target={target}
+        className={`nav-link fw600 ${active === index ? 'active' : ''}`}
+        onClick={() => setActive(index)}
         type="button"
         role="tab"
-        aria-controls={controls}
-        aria-selected={active}
       >
         {title}
       </button>
@@ -98,6 +98,8 @@ const AddPropertyTabContent = () => {
   };
 
 
+
+
   return (
     <>
       <nav>
@@ -105,11 +107,9 @@ const AddPropertyTabContent = () => {
           {tabs.map((tab, index) => (
             <Tab
               key={index}
-              id={tab.id}
+              index={index}
               title={tab.title}
-              active={tab.active}
-              target={tab.target}
-              controls={tab.controls}
+              setActive={setActive}
             />
           ))}
         </div>
@@ -117,44 +117,44 @@ const AddPropertyTabContent = () => {
       {/* End nav tabs */}
 
       <div className="tab-content" id="nav-tabContent">
-        <TabContent id="nav-item1" labelId="nav-item1-tab" active={true}>
-          <h4 className="title fz17 mb30">Property Description</h4>
-          <PropertyDescription onChange={handleDetailChange} propertyDetails={propertyDetails} />
-        </TabContent>
-        {/* End tab for Property Description */}
+        {tabs.map((tab, index) => (
+          <TabContent
+            key={index}
+            id={tab.target.slice(1)} // Remove '#' for matching
+            labelId={tab.id}
+            active={active === index}
+          >
+            {index === 0 && (
+              <ApplicantType setPropertyDetails={setPropertyDetails} propertyDetails={propertyDetails} onNext={nextStep} />
+            )}
+            {index === 1 && (
+              <PropertyDescription setPropertyDetails={setPropertyDetails} propertyDetails={propertyDetails} />
+            )}
+            {index === 2 && (
+              <UploadMedia />
+            )}
+            {index === 3 && (
+              <LocationField />
+            )}
+            {index === 4 && (
+              <DetailsFiled />
+            )}
+            {index === 5 && (
+              <Amenities />
+            )}
+          </TabContent>
+        ))}
+      </div>
 
-        <TabContent id="nav-item2" labelId="nav-item2-tab" active={false}>
-          <UploadMedia />
-        </TabContent>
-        {/* End tab for Upload photos of your property */}
-
-        <TabContent id="nav-item3" labelId="nav-item3-tab" active={false}>
-          <h4 className="title fz17 mb30">Listing Location</h4>
-          <LocationField />
-        </TabContent>
-        {/* End tab for Listing Location */}
-
-        <TabContent id="nav-item4" labelId="nav-item4-tab" active={false}>
-          <h4 className="title fz17 mb30">Listing Details</h4>
-          <DetailsFiled />
-        </TabContent>
-        {/* End tab for Listing Details */}
-
-        <TabContent id="nav-item5" labelId="nav-item5-tab" active={false}>
-          <h4 className="title fz17 mb30">Select Amenities</h4>
-          <div className="row">
-            <Amenities />
+      {active === tabs.length - 1 && (
+        <div className="text-center mt-4">
+          <div className="text-center my-4" style={{ paddingBottom: '20px' }}>
+            <button className="btn btn-primary" type="button" style={{ color: 'white' }} onClick={handleSubmit}>
+              Lägg till fastighet
+            </button>
           </div>
-        </TabContent>
-        {/* End tab for Select Amenities */}
-      </div>
-      <div className="text-center mt-4">
-        <div className="text-center my-4" style={{ paddingBottom: '20px' }}> {/* Adjust the padding as needed */}
-          <button className="btn btn-primary" type="button" style={{ color: 'white' }} onClick={handleSubmit}>
-            Lägg till fastighet
-          </button>
         </div>
-      </div>
+      )}
     </>
   );
 };
