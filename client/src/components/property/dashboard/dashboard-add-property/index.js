@@ -7,6 +7,7 @@ import DetailsFiled from "./details-field";
 import Amenities from "./Amenities";
 import Cookies from 'js-cookie';
 import ApplicantType from "./applicant-type";
+import PropertyHorizon from "./horizon";
 
 const AddPropertyTabContent = () => {
   const [propertyDetails, setPropertyDetails] = useState({
@@ -128,7 +129,7 @@ const AddPropertyTabContent = () => {
               <ApplicantType setPropertyDetails={setPropertyDetails} propertyDetails={propertyDetails} onNext={nextStep} />
             )}
             {index === 1 && (
-              <PropertyDescription setPropertyDetails={setPropertyDetails} propertyDetails={propertyDetails} />
+              <PropertyHorizon setPropertyDetails={setPropertyDetails} propertyDetails={propertyDetails} />
             )}
             {index === 2 && (
               <UploadMedia />

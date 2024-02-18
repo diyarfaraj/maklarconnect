@@ -40,7 +40,13 @@ const ApplicantType = ({ setPropertyDetails, propertyDetails, onNext }) => {
                 ))}
             </div>
             <div className="next-button-container">
-                <button className="next-button" onClick={onNext} >Nästa</button>
+                <button
+                    className={`next-button ${!propertyDetails.applicantType ? 'btn-secondary' : ''}`}
+                    onClick={onNext}
+                    disabled={!propertyDetails.applicantType}
+                >
+                    Nästa
+                </button>
             </div>
         </div>
     );
