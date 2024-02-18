@@ -11797,6 +11797,158 @@ input:focus-visible {
   cursor: pointer;
 }
 
+/*Add property Horizon*/
+.property-horizon-container {
+  font-family: 'Arial', sans-serif;
+  /* Use the font family according to your design */
+  max-width: 500px;
+  /* Adjust as per your layout */
+  margin: auto;
+}
+
+.property-horizon-container h2 {
+  font-size: 24px;
+  /* Adjust as per your design */
+  color: #333;
+  /* Adjust as per your design */
+  margin-bottom: 8px;
+}
+
+.property-horizon-container p {
+  font-size: 16px;
+  /* Adjust as per your design */
+  color: #666;
+  /* Adjust as per your design */
+  margin-bottom: 24px;
+}
+
+.purchase-options {
+  display: flex;
+  flex-direction: column;
+}
+
+.purchase-option {
+  position: relative;
+  display: block;
+  padding: 16px;
+  background-color: #fff;
+  border: 1px solid #dcdcdc;
+  /* Light grey border */
+  margin-bottom: 10px;
+  /* Space between options */
+  cursor: pointer;
+  border-radius: 8px;
+  position: relative;
+  border: 2px solid lightgray;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.purchase-option input[type="radio"] {
+  appearance: none;
+  /* Hide the default radio button */
+  margin: 0;
+}
+
+.purchase-option input[type="radio"]:checked+span {
+  border-color: #00b4d8;
+  /* The border color when option is selected */
+  position: relative;
+}
+
+.purchase-option.selected {
+  border-color: #34c759;
+  /* Green border for the selected option */
+}
+
+.purchase-option input[type="radio"]:checked+span::after {
+  content: '\f00c';
+  /* FontAwesome check icon */
+  font-family: 'Font Awesome 5 Free';
+  /* Adjust if using a different version */
+  font-weight: 900;
+  /* FontAwesome icon weight */
+  display: block;
+  position: absolute;
+  right: 20px;
+  /* Adjust as needed */
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 16px;
+  /* Adjust size as needed */
+  z-index: 1;
+}
+
+.purchase-option input[type="radio"]:checked+span::after {
+  content: '';
+  /* Create a custom checkmark inside the circle */
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 26px;
+  transform: translate(-50%, -50%) scale(0);
+  height: 10px;
+  width: 5px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: translateY(-50%) rotate(45deg);
+  animation: checkmark-expand 0.3s ease forwards;
+}
+
+@keyframes checkmark-expand {
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.purchase-option span {
+  padding-left: 48px;
+  /* Space for custom radio button */
+  border: 2px solid transparent;
+  /* Make space for the border to appear when selected */
+}
+
+.next-button-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.next-button {
+  background-color: #00b4d8;
+  /* Adjust the color to match your design */
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.next-button:disabled {
+  background-color: #cccccc;
+  /* Disabled button color */
+  cursor: default;
+}
+
+.next-button:not(:disabled):hover {
+  background-color: #008c9e;
+  /* Darker shade for hover effect */
+}
+
+.horizon-checkmark {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  color: #34c759;
+  /* Green checkmark */
+  font-size: 24px;
+  /* Adjust size as needed */
+}
+
 /* Small screens (mobile) */
 @media (max-width: 600px) {
   .applicant-types {
