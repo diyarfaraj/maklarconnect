@@ -28,13 +28,11 @@ const DashboardMyPackage = () => {
 
           <div className="dashboard__main pl0-md">
             <div className="dashboard__content bgc-f7">
-              <div className="row pb40">
+              {/* <div className="row pb40">
                 <div className="col-lg-12">
                   <DboardMobileNavigation />
                 </div>
-                {/* End .col-12 */}
               </div>
-              {/* End .row */}
 
               <div className="row align-items-center pb40">
                 <div className="col-lg-12">
@@ -43,7 +41,7 @@ const DashboardMyPackage = () => {
                     <p className="text">We are glad to see you again!</p>
                   </div>
                 </div>
-              </div>
+              </div> */}
               {/* End .row */}
 
               <div className="row">

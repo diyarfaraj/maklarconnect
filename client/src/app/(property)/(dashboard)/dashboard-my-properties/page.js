@@ -30,21 +30,19 @@ const DashboardMyProperties = () => {
 
           <div className="dashboard__main pl0-md">
             <div className="dashboard__content bgc-f7">
-              <div className="row pb40">
+              {/* <div className="row pb40">
                 <div className="col-lg-12">
                   <DboardMobileNavigation />
                 </div>
-                {/* End .col-12 */}
-              </div>
-              {/* End .row */}
+              </div> */}
 
               <div className="row align-items-center pb40">
-                <div className="col-xxl-3">
+                {/* <div className="col-xxl-3">
                   <div className="dashboard_title_area">
                     <h2>My Properties</h2>
                     <p className="text">We are glad to see you again!</p>
                   </div>
-                </div>
+                </div> */}
                 <div className="col-xxl-9">
                   <FilterHeader />
                 </div>

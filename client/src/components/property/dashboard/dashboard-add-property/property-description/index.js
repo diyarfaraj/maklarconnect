@@ -1,7 +1,7 @@
 "use client";
 import Select from "react-select";
 
-const PropertyDescription = ({ propertyDetails, onChange }) => {
+const PropertyDescription = ({ setPropertyDetails, propertyDetails }) => {
   const catergoryOptions = [
     { value: "Apartments", label: "Apartments" },
     { value: "Bungalow", label: "Bungalow" },

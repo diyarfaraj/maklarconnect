@@ -29,13 +29,11 @@ const DashboardAddProperty = () => {
 
           <div className="dashboard__main pl0-md">
             <div className="dashboard__content property-page bgc-f7">
-              <div className="row pb40 d-block d-lg-none">
+              {/* <div className="row pb40 d-block d-lg-none">
                 <div className="col-lg-12">
                   <DboardMobileNavigation />
                 </div>
-                {/* End .col-12 */}
               </div>
-              {/* End .row */}
 
               <div className="row align-items-center pb40">
                 <div className="col-lg-12">
@@ -44,8 +42,7 @@ const DashboardAddProperty = () => {
                     <p className="text">We are glad to see you again!</p>
                   </div>
                 </div>
-              </div>
-              {/* End .row */}
+              </div> */}
 
               <div className="row">
                 <div className="col-xl-12">
