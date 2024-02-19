@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import PropertyDescription from "./property-description";
 import UploadMedia from "./upload-media";
-import LocationField from "./LocationField";
+import Location from "./LocationField";
 import DetailsFiled from "./details-field";
 import Amenities from "./Amenities";
 import Cookies from 'js-cookie';
@@ -21,9 +21,9 @@ const AddPropertyTabContent = () => {
 
   const tabs = [
     { id: 'nav-item1-tab', title: '1. Sökande', active: true, target: '#nav-item1', controls: 'nav-item1' },
-    { id: 'nav-item2-tab', title: '2. Description', active: false, target: '#nav-item2', controls: 'nav-item2' },
-    { id: 'nav-item3-tab', title: '3. Media', active: false, target: '#nav-item3', controls: 'nav-item3' },
-    { id: 'nav-item4-tab', title: '4. Location', active: false, target: '#nav-item4', controls: 'nav-item4' },
+    { id: 'nav-item2-tab', title: '2. Köphorizont', active: false, target: '#nav-item2', controls: 'nav-item2' },
+    { id: 'nav-item3-tab', title: '3. Områden', active: false, target: '#nav-item3', controls: 'nav-item3' },
+    { id: 'nav-item4-tab', title: '4. Media', active: false, target: '#nav-item4', controls: 'nav-item4' },
     { id: 'nav-item5-tab', title: '5. Detail', active: false, target: '#nav-item5', controls: 'nav-item5' },
     { id: 'nav-item6-tab', title: '6. Amenities', active: false, target: '#nav-item6', controls: 'nav-item6' },
   ];
@@ -129,13 +129,14 @@ const AddPropertyTabContent = () => {
               <ApplicantType setPropertyDetails={setPropertyDetails} propertyDetails={propertyDetails} onNext={nextStep} />
             )}
             {index === 1 && (
-              <PropertyHorizon setPropertyDetails={setPropertyDetails} propertyDetails={propertyDetails} />
+              <PropertyHorizon setPropertyDetails={setPropertyDetails} propertyDetails={propertyDetails} onNext={nextStep} />
             )}
             {index === 2 && (
-              <UploadMedia />
+              <Location setPropertyDetails={setPropertyDetails} propertyDetails={propertyDetails} onNext={nextStep} />
             )}
+
             {index === 3 && (
-              <LocationField />
+              <UploadMedia />
             )}
             {index === 4 && (
               <DetailsFiled />

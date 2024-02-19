@@ -11842,7 +11842,6 @@ input:focus-visible {
   border: 2px solid lightgray;
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
 .purchase-option input[type="radio"] {
@@ -11947,6 +11946,15 @@ input:focus-visible {
   /* Green checkmark */
   font-size: 24px;
   /* Adjust size as needed */
+}
+
+.location-search-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  /* Space between input and map */
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 /* Small screens (mobile) */
