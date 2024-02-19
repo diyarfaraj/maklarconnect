@@ -2,6 +2,7 @@
 import ScrollToTop from "@/components/common/ScrollTop";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import 'leaflet/dist/leaflet.css';
 import "../../public/scss/main.scss";
 import { DM_Sans, Poppins } from "next/font/google";
 import { useEffect } from "react";
