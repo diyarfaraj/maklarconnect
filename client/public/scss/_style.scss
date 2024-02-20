@@ -11957,6 +11957,107 @@ input:focus-visible {
   border-radius: 4px;
 }
 
+.suggestions-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  position: absolute;
+  width: calc(100% - 20px);
+  /* Adjust width based on parent padding */
+  max-height: 200px;
+  /* Adjust as needed */
+  overflow-y: auto;
+  z-index: 1000;
+  /* Make sure it's above other content */
+}
+
+.suggestions-list li {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+.suggestions-list li:hover {
+  background-color: #f8f8f8;
+}
+
+.search-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.search-terms {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.search-term {
+  align-items: center;
+  background-color: #007bff;
+  /* Bootstrap primary blue */
+  color: white;
+  padding: 5px 10px;
+  margin-right: 5px;
+  border-radius: 20px;
+  margin-bottom: 5px;
+  width: fit-content;
+  /* Space between tags and input or container edge */
+}
+
+.search-term .faTimes {
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.location-search-input {
+  flex-grow: 1;
+  border: none;
+  padding: 5px;
+  margin-left: 5px;
+}
+
+.location-search-input:focus {
+  outline: none;
+}
+
+.suggestions-list {
+  // display: flex;
+  // flex-direction: column;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  width: calc(100% - 10px);
+  /* same as search container width minus padding */
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.remove-search-suggestion {
+  background-color: transparent;
+  border: none;
+  color: lightgreen;
+}
+
+.suggestions-list li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.suggestions-list li:hover {
+  background-color: #f0f0f0;
+}
+
+
 /* Small screens (mobile) */
 @media (max-width: 600px) {
   .applicant-types {

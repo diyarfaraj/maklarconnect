@@ -14,8 +14,11 @@ const AddPropertyTabContent = () => {
     applicantType: "",
     title: "",
     description: "",
+    locations: [],
   });
   const [active, setActive] = useState(0);
+  const [searchTerms, setSearchTerms] = useState([]);
+
 
   const token = Cookies.get('mc_auth-token');
 
@@ -69,6 +72,12 @@ const AddPropertyTabContent = () => {
   const prevStep = () => {
     setActive((current) => (current > 0 ? current - 1 : current));
   };
+
+  useEffect(() => {
+    // Example of how you might synchronize searchTerms with propertyDetails.locations
+    setSearchTerms(propertyDetails.locations);
+  }, [propertyDetails.locations]);
+
 
   const Tab = ({ index, title, setActive }) => {
     return (
@@ -132,7 +141,7 @@ const AddPropertyTabContent = () => {
               <PropertyHorizon setPropertyDetails={setPropertyDetails} propertyDetails={propertyDetails} onNext={nextStep} />
             )}
             {index === 2 && (
-              <Location setPropertyDetails={setPropertyDetails} propertyDetails={propertyDetails} onNext={nextStep} />
+              <Location setPropertyDetails={setPropertyDetails} propertyDetails={propertyDetails} searchTerms={searchTerms} onNext={nextStep} />
             )}
 
             {index === 3 && (
