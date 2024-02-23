@@ -1,11 +1,11 @@
-'use client';
+"use client";
 import React, { useState, useEffect } from "react";
 import PropertyDescription from "./property-description";
 import UploadMedia from "./upload-media";
 import Location from "./LocationField";
 import DetailsFiled from "./details-field";
 import Amenities from "./Amenities";
-import Cookies from 'js-cookie';
+import Cookies from "js-cookie";
 import ApplicantType from "./applicant-type";
 import PropertyHorizon from "./horizon";
 
@@ -19,18 +19,52 @@ const AddPropertyTabContent = () => {
   const [active, setActive] = useState(0);
   const [searchTerms, setSearchTerms] = useState([]);
 
-
-  const token = Cookies.get('mc_auth-token');
+  const token = Cookies.get("mc_auth-token");
 
   const tabs = [
-    { id: 'nav-item1-tab', title: '1. Sökande', active: true, target: '#nav-item1', controls: 'nav-item1' },
-    { id: 'nav-item2-tab', title: '2. Köphorizont', active: false, target: '#nav-item2', controls: 'nav-item2' },
-    { id: 'nav-item3-tab', title: '3. Områden', active: false, target: '#nav-item3', controls: 'nav-item3' },
-    { id: 'nav-item4-tab', title: '4. Media', active: false, target: '#nav-item4', controls: 'nav-item4' },
-    { id: 'nav-item5-tab', title: '5. Detail', active: false, target: '#nav-item5', controls: 'nav-item5' },
-    { id: 'nav-item6-tab', title: '6. Amenities', active: false, target: '#nav-item6', controls: 'nav-item6' },
+    {
+      id: "nav-item1-tab",
+      title: "1. Sökande",
+      active: true,
+      target: "#nav-item1",
+      controls: "nav-item1",
+    },
+    {
+      id: "nav-item2-tab",
+      title: "2. Köphorizont",
+      active: false,
+      target: "#nav-item2",
+      controls: "nav-item2",
+    },
+    {
+      id: "nav-item3-tab",
+      title: "3. Områden",
+      active: false,
+      target: "#nav-item3",
+      controls: "nav-item3",
+    },
+    {
+      id: "nav-item4-tab",
+      title: "4. Media",
+      active: false,
+      target: "#nav-item4",
+      controls: "nav-item4",
+    },
+    {
+      id: "nav-item5-tab",
+      title: "5. Detail",
+      active: false,
+      target: "#nav-item5",
+      controls: "nav-item5",
+    },
+    {
+      id: "nav-item6-tab",
+      title: "6. Amenities",
+      active: false,
+      target: "#nav-item6",
+      controls: "nav-item6",
+    },
   ];
-
 
   const handleSubmit = async () => {
     console.log(propertyDetails);
@@ -78,11 +112,10 @@ const AddPropertyTabContent = () => {
     setSearchTerms(propertyDetails.locations);
   }, [propertyDetails.locations]);
 
-
   const Tab = ({ index, title, setActive }) => {
     return (
       <button
-        className={`nav-link fw600 ${active === index ? 'active' : ''}`}
+        className={`nav-link fw600 ${active === index ? "active" : ""}`}
         onClick={() => setActive(index)}
         type="button"
         role="tab"
@@ -95,7 +128,7 @@ const AddPropertyTabContent = () => {
   const TabContent = ({ id, labelId, active, children }) => {
     return (
       <div
-        className={`tab-pane fade ${active ? 'show active' : ''}`}
+        className={`tab-pane fade ${active ? "show active" : ""}`}
         id={id}
         role="tabpanel"
         aria-labelledby={labelId}
@@ -106,9 +139,6 @@ const AddPropertyTabContent = () => {
       </div>
     );
   };
-
-
-
 
   return (
     <>
@@ -135,32 +165,44 @@ const AddPropertyTabContent = () => {
             active={active === index}
           >
             {index === 0 && (
-              <ApplicantType setPropertyDetails={setPropertyDetails} propertyDetails={propertyDetails} onNext={nextStep} />
+              <ApplicantType
+                setPropertyDetails={setPropertyDetails}
+                propertyDetails={propertyDetails}
+                onNext={nextStep}
+              />
             )}
             {index === 1 && (
-              <PropertyHorizon setPropertyDetails={setPropertyDetails} propertyDetails={propertyDetails} onNext={nextStep} />
+              <PropertyHorizon
+                setPropertyDetails={setPropertyDetails}
+                propertyDetails={propertyDetails}
+                onNext={nextStep}
+              />
             )}
             {index === 2 && (
-              <Location setPropertyDetails={setPropertyDetails} propertyDetails={propertyDetails} searchTerms={searchTerms} onNext={nextStep} />
+              <Location
+                setPropertyDetails={setPropertyDetails}
+                propertyDetails={propertyDetails}
+                searchTerms={searchTerms}
+                onNext={nextStep}
+              />
             )}
 
-            {index === 3 && (
-              <UploadMedia />
-            )}
-            {index === 4 && (
-              <DetailsFiled />
-            )}
-            {index === 5 && (
-              <Amenities />
-            )}
+            {index === 3 && <UploadMedia />}
+            {index === 4 && <DetailsFiled />}
+            {index === 5 && <Amenities />}
           </TabContent>
         ))}
       </div>
 
       {active === tabs.length - 1 && (
         <div className="text-center mt-4">
-          <div className="text-center my-4" style={{ paddingBottom: '20px' }}>
-            <button className="btn btn-primary" type="button" style={{ color: 'white' }} onClick={handleSubmit}>
+          <div className="text-center my-4" style={{ paddingBottom: "20px" }}>
+            <button
+              className="btn btn-primary"
+              type="button"
+              style={{ color: "white" }}
+              onClick={handleSubmit}
+            >
               Lägg till fastighet
             </button>
           </div>
