@@ -1,13 +1,12 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import PropertyDescription from "./property-description";
 import UploadMedia from "./upload-media";
 import Location from "./LocationField";
-import DetailsFiled from "./details-field";
-import Amenities from "./Amenities";
 import Cookies from "js-cookie";
 import ApplicantType from "./applicant-type";
 import PropertyHorizon from "./horizon";
+import SearchCriteria from "./search-criteria";
+import PropertyDescription from "./property-description";
 
 const AddPropertyTabContent = () => {
   const [propertyDetails, setPropertyDetails] = useState({
@@ -15,9 +14,87 @@ const AddPropertyTabContent = () => {
     title: "",
     description: "",
     locations: [],
+    propertyType: "",
+    minPrice: 0,
+    maxPrice: 0,
+    minArea: 0,
+    maxArea: 0,
+    minRooms: 0,
+    maxRooms: 0,
+    description: "",
+    title: "",
+    features: {
+      balcony: false,
+      parking: false,
+      pool: false,
+      garden: false,
+      garage: false,
+      gym: false,
+      sauna: false,
+      fireplace: false,
+      elevator: false,
+      internet: false,
+      airConditioning: false,
+      heating: false,
+      furnished: false,
+      petFriendly: false,
+      alarm: false,
+      security: false,
+      seaView: false,
+      mountainView: false,
+      cityView: false,
+      lakeView: false,
+      forestView: false,
+      parkView: false,
+      riverView: false,
+      islandView: false,
+      sunsetView: false,
+      sunriseView: false,
+      golfCourseView: false,
+      skiSlopeView: false,
+      marinaView: false,
+      poolView: false,
+      gardenView: false,
+      courtyardView: false,
+      streetView: false,
+      otherView: false,
+    },
+    amenities: {
+      bakery: false,
+      cafe: false,
+      deli: false,
+      groceryStore: false,
+      park: false,
+      preschool: false,
+      school: false,
+      college: false,
+      university: false,
+      gym: false,
+      outdoorGym: false,
+      hairdresser: false,
+      dryCleaning: false,
+      marina: false,
+      playground: false,
+      kiosk: false,
+      spa: false,
+      salon: false,
+      fastFood: false,
+      sportsField: false,
+      sportsHall: false,
+      boatClub: false,
+      busStation: false,
+      ferryTerminal: false,
+      restaurant: false,
+      convenienceStore: false,
+      pub: false,
+      pharmacy: false,
+    },
   });
+
   const [active, setActive] = useState(0);
   const [searchTerms, setSearchTerms] = useState([]);
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
 
   const token = Cookies.get("mc_auth-token");
 
@@ -31,7 +108,7 @@ const AddPropertyTabContent = () => {
     },
     {
       id: "nav-item2-tab",
-      title: "2. Köphorizont",
+      title: "2. Köphorisont",
       active: false,
       target: "#nav-item2",
       controls: "nav-item2",
@@ -45,25 +122,25 @@ const AddPropertyTabContent = () => {
     },
     {
       id: "nav-item4-tab",
-      title: "4. Media",
+      title: "4. Sökreterier",
       active: false,
       target: "#nav-item4",
       controls: "nav-item4",
     },
     {
-      id: "nav-item5-tab",
-      title: "5. Detail",
+      id: "nav-item4-tab",
+      title: "5. Beskrivning",
       active: false,
       target: "#nav-item5",
       controls: "nav-item5",
     },
-    {
-      id: "nav-item6-tab",
-      title: "6. Amenities",
-      active: false,
-      target: "#nav-item6",
-      controls: "nav-item6",
-    },
+    // {
+    //   id: "nav-item4-tab",
+    //   title: "6. Beskrivning",
+    //   active: false,
+    //   target: "#nav-item6",
+    //   controls: "nav-item6",
+    // },
   ];
 
   const handleSubmit = async () => {
@@ -103,14 +180,20 @@ const AddPropertyTabContent = () => {
     setActive(active + 1 < tabs.length ? active + 1 : active);
   };
 
-  const prevStep = () => {
-    setActive((current) => (current > 0 ? current - 1 : current));
-  };
+  // const prevStep = () => {
+  //   setActive((current) => (current > 0 ? current - 1 : current));
+  // };
 
   useEffect(() => {
     // Example of how you might synchronize searchTerms with propertyDetails.locations
     setSearchTerms(propertyDetails.locations);
   }, [propertyDetails.locations]);
+
+  useEffect(() => {
+    // Example of how you might synchronize searchTerms with propertyDetails.locations
+    setTitle(propertyDetails.locations);
+    setDescription(propertyDetails.description);
+  }, [propertyDetails.title, propertyDetails.description]);
 
   const Tab = ({ index, title, setActive }) => {
     return (
@@ -187,9 +270,23 @@ const AddPropertyTabContent = () => {
               />
             )}
 
-            {index === 3 && <UploadMedia />}
-            {index === 4 && <DetailsFiled />}
-            {index === 5 && <Amenities />}
+            {index === 3 && (
+              <SearchCriteria
+                propertyDetails={propertyDetails}
+                setPropertyDetails={setPropertyDetails}
+                onNext={nextStep}
+              />
+            )}
+            {/* {index === 4 && <UploadMedia />} */}
+            {index === 4 && (
+              <PropertyDescription
+                propertyDetails={propertyDetails}
+                setPropertyDetails={setPropertyDetails}
+                title={title}
+                description={description}
+                onNext={nextStep}
+              />
+            )}
           </TabContent>
         ))}
       </div>

@@ -137,12 +137,14 @@ const Location = ({
 
   return (
     <div className="location-container">
+      <h2>Områden</h2>
+      <p>Vart letar du boende?</p>
       <input
         type="text"
         ref={inputRef}
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        placeholder="Enter a city or address"
+        placeholder="Ange gata, stad eller län..."
         className="location-search-input"
       />
       {suggestions.length > 0 && (
