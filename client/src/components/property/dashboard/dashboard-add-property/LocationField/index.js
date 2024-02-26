@@ -79,7 +79,6 @@ const Location = ({
       locations: [...prevDetails.locations, locationName],
     }));
 
-    console.log("Property details:", propertyDetails);
     setSuggestions([]);
     setSearchTerm("");
   };
@@ -106,10 +105,7 @@ const Location = ({
     }
   }, [searchTerms]);
 
-  useEffect(() => {
-    console.log("Search terms:", searchTerms);
-    console.log("Property details:", propertyDetails);
-  }, [searchTerms, propertyDetails]);
+  useEffect(() => {}, [searchTerms, propertyDetails]);
 
   const removeSearchTerm = (termToRemove) => {
     // Remove from the selected locations list
