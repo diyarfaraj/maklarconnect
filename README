@@ -11,3 +11,7 @@ for pushing and generating prisma:
 1. npx prisma db push
 2. npx prisma generate
 3. go to mongodb and insert the documents to the collection manually
+
+
+# remove all branches except main
+``git branch | grep -v "main" | xargs git branch -D``
