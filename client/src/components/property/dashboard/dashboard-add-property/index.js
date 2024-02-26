@@ -145,35 +145,112 @@ const AddPropertyTabContent = () => {
 
   const handleSubmit = async () => {
     console.log(propertyDetails);
-    // if (!token) {
-    //   console.error('No token found, user is not logged in');
-    //   return;
-    // }
 
-    // try {
-    //   const response = await fetch('http://localhost:8747/api/properties/add', {
-    //     method: 'POST',
-    //     headers: {
-    //       'Content-Type': 'application/json',
-    //       'Authorization': `Bearer ${token}`,
-    //     },
-    //     body: JSON.stringify(propertyDetails),
-    //   });
+    if (!token) {
+      console.error("No token found, user is not logged in");
+      return;
+    }
 
-    //   if (!response.ok) {
-    //     throw new Error(`HTTP error! status: ${response.status}`);
-    //   }
+    try {
+      const response = await fetch("http://localhost:8747/api/properties/add", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(propertyDetails),
+      });
 
-    //   const result = await response.text();
-    //   console.log('Property added successfully:', result);
-    //   setPropertyDetails({
-    //     title: "",
-    //     description: "",
-    //     // ... other fields ...
-    //   });
-    // } catch (error) {
-    //   console.error('There was an error adding the property:', error);
-    // }
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const result = await response.text();
+      console.log("Property added successfully:", result);
+      setPropertyDetails({
+        applicantType: "",
+        title: "",
+        description: "",
+        locations: [],
+        propertyType: "",
+        minPrice: 0,
+        maxPrice: 0,
+        minArea: 0,
+        maxArea: 0,
+        minRooms: 0,
+        maxRooms: 0,
+        description: "",
+        title: "",
+        features: {
+          balcony: false,
+          parking: false,
+          pool: false,
+          garden: false,
+          garage: false,
+          gym: false,
+          sauna: false,
+          fireplace: false,
+          elevator: false,
+          internet: false,
+          airConditioning: false,
+          heating: false,
+          furnished: false,
+          petFriendly: false,
+          alarm: false,
+          security: false,
+          seaView: false,
+          mountainView: false,
+          cityView: false,
+          lakeView: false,
+          forestView: false,
+          parkView: false,
+          riverView: false,
+          islandView: false,
+          sunsetView: false,
+          sunriseView: false,
+          golfCourseView: false,
+          skiSlopeView: false,
+          marinaView: false,
+          poolView: false,
+          gardenView: false,
+          courtyardView: false,
+          streetView: false,
+          otherView: false,
+        },
+        amenities: {
+          bakery: false,
+          cafe: false,
+          deli: false,
+          groceryStore: false,
+          park: false,
+          preschool: false,
+          school: false,
+          college: false,
+          university: false,
+          gym: false,
+          outdoorGym: false,
+          hairdresser: false,
+          dryCleaning: false,
+          marina: false,
+          playground: false,
+          kiosk: false,
+          spa: false,
+          salon: false,
+          fastFood: false,
+          sportsField: false,
+          sportsHall: false,
+          boatClub: false,
+          busStation: false,
+          ferryTerminal: false,
+          restaurant: false,
+          convenienceStore: false,
+          pub: false,
+          pharmacy: false,
+        },
+      });
+    } catch (error) {
+      console.error("There was an error adding the property:", error);
+    }
   };
 
   const nextStep = () => {
@@ -189,11 +266,11 @@ const AddPropertyTabContent = () => {
     setSearchTerms(propertyDetails.locations);
   }, [propertyDetails.locations]);
 
-  useEffect(() => {
-    // Example of how you might synchronize searchTerms with propertyDetails.locations
-    setTitle(propertyDetails.locations);
-    setDescription(propertyDetails.description);
-  }, [propertyDetails.title, propertyDetails.description]);
+  // useEffect(() => {
+  //   // Example of how you might synchronize searchTerms with propertyDetails.locations
+  //   setTitle(propertyDetails.locations);
+  //   setDescription(propertyDetails.description);
+  // }, [propertyDetails.title, propertyDetails.description]);
 
   const Tab = ({ index, title, setActive }) => {
     return (

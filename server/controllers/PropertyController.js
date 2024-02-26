@@ -19,7 +19,18 @@ export const addProperty = async (req, res, next) => {
       const {
         title,
         description,
-        features,
+        applicantType,
+        horizon,
+        propertyType,
+        minPrice,
+        maxPrice,
+        minArea,
+        maxArea,
+        minRooms,
+        maxRooms,
+        locations,
+        features, // Assuming this is sent as an object
+        amenities, // Assuming this is sent as an object
         images,
         orders,
         reviews,
@@ -33,14 +44,27 @@ export const addProperty = async (req, res, next) => {
         data: {
           title,
           description,
-          features,
+          applicantType,
+          horizon,
+          propertyType,
+          minPrice,
+          maxPrice,
+          minArea,
+          maxArea,
+          minRooms,
+          maxRooms,
+          locations,
+          features, // Assuming this is sent as an object
+          amenities, // Assuming this is sent as an object
           images,
           orders,
           reviews,
         },
       });
 
-      return res.status(201).json({ "message": "Successfully created the property." })
+      return res
+        .status(201)
+        .json({ message: "Successfully created the property." });
     }
     // }
     // return res.status(400).send("All properties should be required.");
@@ -100,7 +124,8 @@ export const getPropertyData = async (req, res, next) => {
       const averageRating = (
         userWithProperties.properties.reduce(
           (acc, property) =>
-            acc + property.reviews.reduce((sum, review) => sum + review.rating, 0),
+            acc +
+            property.reviews.reduce((sum, review) => sum + review.rating, 0),
           0
         ) / totalReviews
       ).toFixed(1);
@@ -235,10 +260,13 @@ const checkOrder = async (userId, propertyId) => {
 export const checkPropertyOrder = async (req, res, next) => {
   try {
     if (req.userId && req.params.propertyId) {
-      const hasUserOrderedProperty = await checkOrder(req.userId, req.params.propertyId);
-      return res
-        .status(200)
-        .json({ hasUserOrderedProperty: hasUserOrderedProperty ? true : false });
+      const hasUserOrderedProperty = await checkOrder(
+        req.userId,
+        req.params.propertyId
+      );
+      return res.status(200).json({
+        hasUserOrderedProperty: hasUserOrderedProperty ? true : false,
+      });
     }
     return res.status(400).send("userId and propertyId is required.");
   } catch (err) {
