@@ -45,7 +45,7 @@ const Location = ({
     if (searchTerm.length >= 3) {
       const search = async () => {
         const response = await fetch(
-          `https://nominatim.openstreetmap.org/search?format=json&addressdetails=1&limit=5&q=${encodeURIComponent(
+          `https://nominatim.openstreetmap.org/search?format=json&addressdetails=1&limit=5&countrycodes=se&q=${encodeURIComponent(
             searchTerm
           )}`
         );
