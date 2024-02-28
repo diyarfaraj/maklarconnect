@@ -16,7 +16,7 @@ const RangeDropdowns = ({ propertyDetails, setPropertyDetails }) => {
   ];
 
   const maxRoomOptions = [
-    { label: "Min", value: "" },
+    { label: "Max", value: "" },
     { label: "1 rum", value: "1" },
     { label: "2 rum", value: "2" },
     { label: "3 rum", value: "3" },
