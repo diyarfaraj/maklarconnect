@@ -66,35 +66,17 @@ const MainMenu = () => {
       {/* End homeItems */}
 
       <li className="megamenu_style dropitem">
-        <a className="list-item" href="#">
+        <Link className="list-item" href={"/grid-default"}>
           <span className={topMenu == "listing" ? "title menuActive" : "title"}>
-            Annonser
+            Bostäder
           </span>
-          <span className="arrow"></span>
-        </a>
-        <ul className="row dropdown-megamenu sub-menu">
-          {listingItems.map((item, index) => (
-            <li className="col mega_menu_list" key={index}>
-              <h4 className="title">{item.title}</h4>
-              <ul className="sub-menu">
-                {item.submenu.map((submenuItem, subIndex) => (
-                  <li key={subIndex}>
-                    <Link
-                      className={`${handleActive(submenuItem.href)}`}
-                      href={submenuItem.href}
-                    >
-                      {submenuItem.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </li>
-          ))}
-        </ul>
+          {/* <span className="arrow"></span> */}
+        </Link>
+        {/*list removed from here*/}
       </li>
       {/* End listings */}
 
-      <li className="visible_list dropitem">
+      {/* <li className="visible_list dropitem">
         <a className="list-item" href="#">
           <span
             className={topMenu == "property" ? "title menuActive" : "title"}
@@ -131,7 +113,7 @@ const MainMenu = () => {
             </li>
           ))}
         </ul>
-      </li>
+      </li> */}
       {/* End property Items */}
 
       {/* <li className="visible_list dropitem">

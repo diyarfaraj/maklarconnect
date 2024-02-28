@@ -31,8 +31,9 @@ const DefaultHeader = () => {
   return (
     <>
       <header
-        className={`header-nav nav-homepage-style light-header menu-home4 main-menu ${navbar ? "sticky slideInDown animated" : ""
-          }`}
+        className={`header-nav nav-homepage-style light-header menu-home4 main-menu ${
+          navbar ? "sticky slideInDown animated" : ""
+        }`}
       >
         <nav className="posr">
           <div className="container posr menu_bdrt1">
@@ -41,20 +42,22 @@ const DefaultHeader = () => {
                 <div className="d-flex align-items-center justify-content-between">
                   <div className="logos mr40">
                     <Link className="header-logo logo1" href="/">
-                      <Image
+                      {/* <Image
                         width={138}
                         height={44}
                         src="/images/header-logo2.svg"
                         alt="Header Logo"
-                      />
+                      /> */}
+                      MäklarConnect
                     </Link>
                     <Link className="header-logo logo2" href="/">
-                      <Image
+                      {/* <Image
                         width={138}
                         height={44}
                         src="/images/header-logo2.svg"
                         alt="Header Logo"
-                      />
+                      /> */}
+                      MäklarConnect
                     </Link>
                   </div>
                   {/* End Logo */}
@@ -79,7 +82,10 @@ const DefaultHeader = () => {
                     <UserMenu />
                   ) : (
                     <Link href="/login">
-                      <i className="far fa-user-circle fz16 me-2" style={{ color: 'white' }} ></i>
+                      <i
+                        className="far fa-user-circle fz16 me-2"
+                        style={{ color: "white" }}
+                      ></i>
                       <span className=" login-info">Logga in</span>
                     </Link>
                   )}
